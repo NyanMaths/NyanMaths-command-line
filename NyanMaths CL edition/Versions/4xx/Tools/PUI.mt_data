@@ -1,0 +1,24 @@
+def PUI ():
+    "\n This tool can compute the relationship between intensity, electric tension and power.\n Give it 0 for the value you want to get."
+    
+    print ("\n This tool can compute the relationship between intensity, electric tension and power.\n Give it 0 for the value you want to get.")
+
+    try:
+        u = float (input ("\n Input elecric tension :  "))
+        p = float (input ("\n Enter power, please :  "))
+        i = float (input ("\n To finish, intensity (Not \"please\", cause I work for you) :  "))
+
+        assert (u == 0) ^ (p == 0) ^ (i == 0)
+
+    except:
+        print ("\n\n Please don't try to make me crash !\n")
+
+    else:
+        if u == 0:
+            print ("\n Electric tension :  {}\n".format (trans (p / i)))
+
+        elif i == 0:
+            print ("\n Intensity :  {}\n".format (trans (p / u)))
+
+        else:
+            print ("\n Power :  {}\n".format (trans (u * i)))

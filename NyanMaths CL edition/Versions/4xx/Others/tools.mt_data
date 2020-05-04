@@ -1,0 +1,2 @@
+def tools ():
+    print ("\n Tools which you can use in this version :\n  primes\n  dividers\n  UIR\n  PUI\n  VDT\n  MVD\n  temperature\n  func\n  const\n  ADP\n")

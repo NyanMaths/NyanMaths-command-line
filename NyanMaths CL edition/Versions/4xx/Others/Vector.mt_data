@@ -1,0 +1,156 @@
+class Vector:
+    __type__ = "Vector"
+    
+    def __init__ (self, x = 0, y = 0):
+        if (type (x) is not complex) and (type (y) is not complex):
+            self._x = x
+            self._y = y
+
+        else:
+            print ("\n Do not try to make me crash !\n Initialization of default values...\n Done")
+            self._x = 0
+            self._y = 0
+
+    def _getX (self):
+        return self._x
+
+    def _getY (self):
+        return self._y
+
+    def _getLength (self):
+        return (self._x * self._x + self._y * self._y)**0.5
+
+
+    def _setX (self, nX):
+        if type (nX) is not complex:
+            self._x = nX
+
+    def _setY (self, nY):
+        if type (nY) is not complex:
+            self._y = nY
+
+    def _setLength (self, nLength):
+        print ("\n Impossible to change it !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        return "\n ({0} ; {1})\n Length : {2}\n".format (trans (self.x), trans (self.y), trans (self.length))
+
+
+    def __add__ (self, n):
+        if type (n) is Vector:
+            return Vector (self.x + n.x, self.y + n.y)
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __sub__ (self, n):
+        if type (n) is Vector:
+            return Vector (self.x - n.x, self.y - n.y)
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __mul__ (self, n):
+        if type (n) is Vector:
+            return self.x * n.x + self.y * n.y
+
+        elif (type (n) is int) or (type (n) is float):
+            return Vector (self.x * n, self.y * n)
+
+        print ("\n Error : invalid operands !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+    def __truediv__ (self, n):
+        if type (n) is int or type (n) is float:
+            return Vector (self.x / n, self.y / n)
+
+        print ("\n Error : invalid operands !\n")
+
+    def __iadd__ (self, n):
+        if type (n) is Vector:
+            self._x += n.x
+            self._y += n.y
+
+        else:
+            print ("\n Error : invalid operands !\n")
+
+        return self
+
+    def __isub__ (self, n):
+        if type (n) is Vector:
+            self._x -= n.x
+            self._y -= n.y
+
+        else:
+            print ("\n Error : invalid operands !\n")
+
+        return self
+
+    def __imul__ (self, n):
+        if type (n) is Vector:
+            return self.x * n.x + self.y * n.y
+
+        elif type (n) is int or type (n) is float:
+            self._x *= n
+            self._y *= n
+
+        else:
+            print ("\n Error : invalid operands !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if type (n) is int or type (n) is float:
+            self._x /= n
+            self._y /= n
+
+        else:
+            print ("\n Error : invalid operands !\n")
+
+        return self
+
+
+    def __eq__ (self, n):
+        if type (n) is Vector:
+            return self.x == n.x and self.y == n.y
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Vector:
+            return self.x != n.x or self.y != n.y
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __gt__ (self, n):
+        if type (n) is Vector:
+            return self.length > n.length
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __lt__ (self, n):
+        if type (n) is Vector:
+            return self.length < n.length
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __ge__ (self, n):
+        if type (n) is Vector:
+            return self.length >= n.length
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+    def __le__ (self, n):
+        if type (n) is Vector:
+            return self.length <= n.length
+
+        print ("\n Invalid operands : they must be two vectors !\n")
+
+
+    length = property (_getLength, _setLength)
+    x = property (_getX, _setX)
+    y = property (_getY, _setY)

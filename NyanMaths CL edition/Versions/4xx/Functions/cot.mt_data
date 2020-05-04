@@ -1,0 +1,4 @@
+def cot (x):
+    "Returns the cotangent of x (by default, x is in radians)"
+
+    return cos (x) / sin (x)

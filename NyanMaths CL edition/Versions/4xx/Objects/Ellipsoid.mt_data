@@ -1,0 +1,151 @@
+class Ellipsoid:
+    __type__ = "Ellipsoid"
+    
+    def __init__ (self, a, b = None, c = None):
+        if b is None:
+            b = a
+            c = a
+
+        if _isRealLimit (a) and _isRealLimit (b) and _isRealLimit (c):
+            self._a = a
+            self._b = b
+            self._c = c
+
+        else:
+            print ("\n Invalid arguments : they must be positive non-zero real numbers !\n Initialization of default values...\n Done\n")
+
+            self._a = 1
+            self._b = 1
+            self._c = 1
+
+
+    def _getA (self):
+        return self._a
+
+    def _getB (self):
+        return self._b
+
+    def _getC (self):
+        return self._c
+
+    def _getRadius (self):
+        if self._a == self._b == self._c:
+            return self._a
+
+        print ("\n You can't access to this property !\n")
+        raise RuntimeError
+
+    def _getVolume (self):
+        return 4 * pi * self._a * self._b * self._c / 3
+
+    def _getSurface (self):
+        if self._a == self._b == self._c:
+            return 4 * pi * self._a * self._a
+
+        print ("\n You can't access to this property !\n")
+        raise RuntimeError
+
+
+    def _setA (self, nA):
+        if _isRealLimit (nA):
+            self._a = nA
+                            
+        else:
+            BSOD ()
+
+    def _setB (self, nB):
+        if _isRealLimit (nB):
+            self._b = nB
+                            
+        else:
+            BSOD ()
+                            
+    def _setC (self, nC):
+        if _isRealLimit (nC):
+            self._c = nC
+
+        else:
+            print ("\n Invalid value : it must be a positive non-zero real number !\n")
+
+    def _setRadius (self, nRadius):
+        if _isRealLimit (nRadius):
+            self._a = nRadius
+            self._b = nRadius
+            self._c = nRadius
+
+        else:
+            print ("\n Invalid new radius : it must be a positive non-zero real number !\n")
+
+    def _setVolume (self, nVolume):
+        print ("\n Impossible to change it !\n")
+
+    def _setSurface (self, nSurface):
+        print ("\n Impossible to change it !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named {} in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw ellipsoid {4} {0} {1} {2} {3}'.format (self.a, self.b, self.c, self.volume, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._a *= n
+            self._b *= n
+            self._c *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._a /= n
+            self._b /= n
+            self._c /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Ellipsoid (self._a * n, self._b * n, self._c * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Ellipsoid (self._a / n, self._b / n, self._c / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    def __eq__ (self, n):
+        if type (n) is Ellipsoid:
+            return self.a == n.a and self.b == n.b and self.c == n.c
+
+        print ("\n Invalid operands : they must be two ellipsoids !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Ellipsoid:
+            return self.a != n.a or self.b != n.b or self.c != n.c
+
+        print ("\n Invalid operands : they must be two ellipsoids !\n")
+
+
+    a = property (_getA, _setA)
+    b = property (_getB, _setB)
+    c = property (_getC, _setC)
+    radius = property (_getRadius, _setRadius)
+    volume = property (_getVolume, _setVolume)
+    surface = property (_getSurface, _setSurface)

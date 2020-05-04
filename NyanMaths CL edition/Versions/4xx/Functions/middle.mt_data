@@ -1,0 +1,11 @@
+def middle (a, b = None):
+    "Calculate the average of two scalars or the middle of a segment (x and y are two points in this case)"
+    
+    if type (a) is Segment and b is None:
+        return Coords ((a._x1 + a._x2) / 2, (a._y1 + a._y2) / 2)
+
+    elif type (a) is Coords and type (b) is Coords:
+        return Coords ((a.x + b.x) / 2, (a.y + b.y) / 2)
+
+    else:
+        return (a + b) / 2

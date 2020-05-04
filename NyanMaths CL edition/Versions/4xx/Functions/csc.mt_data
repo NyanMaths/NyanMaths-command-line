@@ -1,0 +1,4 @@
+def csc (x):
+    "Returns the cosecant of x (by default, x is in radians)"
+
+    return 1 / sin (x)

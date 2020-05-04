@@ -1,0 +1,45 @@
+def _delFunc ():
+    name = input ("\n What is the name of the function which you want to delete ?  ")
+
+    if exists ('User Functions/{}.mt_data'.format (name)):
+        remove ('User Functions/{}.mt_data'.format (name))
+        print ("\n Removed function !\n")
+
+    else:
+        print ("\n\n This function doesn't exist, sorry !\n")
+
+
+def func ():
+    "Allows you to create mathematical functions such as f(x) = x * x - 3\n You will be able to use it as others functions and delete it if you don't need it anymore."
+
+    choice = input ("\n What do you want to do ?  Create a function (1) or delete a function (2) ?  ")
+
+    if choice == '1':
+        name = input ("\n Please give me the name of the function\n which you want create (only alphabetics characters and underscores _) :  ")
+
+        if re.search ('^[a-zA-Z_]+$', name) is None:
+            return "Please stop making fun of me..."
+
+        if name in constsList:
+            print ("\n This function already exists !\n")
+            raise RuntimeError        
+
+        expression = input ("\n Enter the expression (x is the parameter) :  ")
+        doc = input ("\n Do you want to write a short desciption of your function ?\n Just press \"Enter\" if you're lazy...\n Description :  ")
+
+
+        exec (name + " = lambda x : " + expression)
+        print ("\n Let's test your function : {0} (3) = {1}".format (name, eval (name + "(3)")))
+
+
+        funcfile = open ('User Functions/{}.mt_data'.format (name), 'w')
+        funcfile.write ('def ' + name + ' (x):\n\t"Description : ' + doc + '\\n Expression : ' + expression + '"\n\treturn ' + expression)
+
+
+        print ("\n\n Your function is saved !\n You have to restart the application to be able to call it.\n")
+
+    elif choice == '2':
+        _delFunc ()
+
+    else:
+        print ("\n I think it isn't too hard for you to input 1 or 2...\n")

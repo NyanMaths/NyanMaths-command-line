@@ -1,0 +1,4 @@
+def frequence (duration, t = 1):
+    "Calculate the frequence of the phenomenol.\n If there's many periods in duration, you can specify how many in the second argument."
+
+    return 1 / (duration / t)

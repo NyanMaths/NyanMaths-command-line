@@ -1,0 +1,21 @@
+def syracuse (x):
+    "Displays the Collatz contiuation of x"
+
+    if x < 1 or type (x) is not int:
+        print ("\n Invalid argument : it must be a positive interger !\n")
+
+    else:
+        count = 0
+
+        while x != 1:
+            if x % 2:
+                x = int (x * 3 + 1)
+
+            else:
+                x = int (x / 2)
+
+            count += 1
+
+            print ("\n", x, end = '')
+
+        print ("\n ...\n\n The Collatz continuation of x is composed of {} numbers.\n".format (count))

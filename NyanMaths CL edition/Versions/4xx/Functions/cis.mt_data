@@ -1,0 +1,4 @@
+def cis (x):
+    "Returns e^(jx)\n Domain : C"
+
+    return e**(1j * x)

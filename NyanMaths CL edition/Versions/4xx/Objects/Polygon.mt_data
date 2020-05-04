@@ -1,0 +1,179 @@
+class Polygon:
+    __type__ = "Polygon"
+
+    types = {3 : 'Equilateral triangle',
+                 4 : 'Square',
+                 5 : 'Pentagon',
+                 6 : 'Hexagon',
+                 7 : 'Heptagon',
+                 8 : 'Octagon',
+                 9 : 'Nonagon',
+                 10 : 'Decagon',
+                 12 : 'Duodecagon',
+                 15 : 'Pentadecagon'}
+
+
+    def __init__ (self, nSides, side):
+        if _isIntegral (nSides, 2) and _isRealLimit (side):
+            self._nSides = nSides
+            self._side = side
+
+        else:
+            print ("\n Do not try to make me crash !\n Initialization of default values...\n Done")
+            self._nSides = 3
+            self._side = 1
+
+        try:
+            self._type = Polygon.types[self._nSides]
+
+        except KeyError:
+            self._type = 'Polygon'
+
+
+    def _getNSides (self):
+        return self._nSides
+
+    def _getSide (self):
+        return self._side
+
+    def _getApothem (self):
+        return self._side / (2 * tan (pi / self._nSides, rad).real)
+
+    def _getPerimeter (self):
+        return self._nSides * self._side
+
+    def _getSurface (self):
+        return (self._nSides * self._side**2 / (2 * tan (pi / self._nSides, rad))) / 2
+
+    def _getCircumcircle (self):
+        return Disk (((self._side / 2 / sin (pi / self._nSides, rad))).real)
+
+    def _getInscribedCircle (self):
+        return Disk ((self._side / (2 * tan (pi / self._nSides, rad))).real)
+
+
+    def _setNSides (self, nNSides):
+        if _isIntegral (nNSides, 2):
+            self._nSides = nNSides
+
+            try:
+                self._type = Polygon.types[self._nSides]
+
+            except KeyError:
+                self._type = 'Polygon'
+
+        else:
+            print ("\n Invalid new number of sides : it must be greater than 2 !\n")
+
+    def _setSide (self, nSide):
+        if _isRealLimit (nSide):
+            self._side = nSide
+
+        else:
+            print ("\n Invalid new side : it must be a positive non-zero real number !\n")
+
+    def _setApothem (self, nApothem):
+        if _isRealLimit (nApothem):
+            self._side = nApothem * 2 * tan (pi / self._nSides, rad)
+
+        else:
+            print ("\n Invalid new apothem : it must be a positive non-zero real number !\n")
+
+    def _setPerimeter (self, nPerimeter):
+        if _isRealLimit (nPerimeter):
+            self._side = nPerimeter / self._nSides
+
+        else:
+            print ("\n Invalid new perimeter : it must be a positive non-zero real number !\n")
+
+    def _setSurface (self, nSurface):
+        if _isRealLimit (nSurface):
+            self._side = 2 * (tan (pi / self._nSides, rad) * nSurface / self._nSides)**0.5
+
+        else:
+            print ("\n Invalid new surface : it must be a positive non-zero real number !\n")
+
+    def _setCircumcircle (self, n):
+        if _isRealLimit (n):
+            self._side = 2 * n * sin (pi / self._nSides, rad)
+
+        elif type (n) is Disk:
+            self._side = 2 * n.radius * sin (pi / self._nSides, rad)
+
+        else:
+            print ("\n You can't do it, sorry !\n")
+
+    def _setInscribedCircle (self, n):
+        if _isRealLimit (n):
+            self._side = n * 2 * tan (pi / self._nSides, rad)
+
+        elif type (n) is Disk:
+            self._side = n.radius * 2 * tan (pi / self._nSides, rad)
+
+        else:
+            print ("\n The new inscribed circle must be a Disk or its radius, please be nice...\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        return "\n Type : {0}\n Number of sides : {1}\n Side : {2}\n Apothem : {3}\n Perimeter : {4}\n Surface : {5}\n".format (self._type, self._nSides, trans (self._side), trans (self.apothem), trans (self.perimeter), trans (self.surface))
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._side *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._side /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Polygon (self._nSides, self._side * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Polygon (self._nSides, self._side / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    def __eq__ (self, n):
+        if type (n) is Polygon:
+            return self.nSides == n.nSides and self.side == n.side
+
+        print ("\n Invalid operand type : they must be two {} !\n".format (self._type))
+
+    def __ne__ (self, n):
+        if type (n) is Polygon:
+            return self.nSides != n.nSides or self.side != n.side
+
+        print ("\n Invalid operand type : they must be two {} !\n".format (self._type))
+
+
+    nSides = property (_getNSides, _setNSides)
+    side = property (_getSide, _setSide)
+
+    apothem = property (_getApothem, _setApothem)
+    perimeter = property (_getPerimeter, _setPerimeter)
+    surface = property (_getSurface, _setSurface)
+
+    circumcircle = property (_getCircumcircle, _setCircumcircle)
+    inscribedCircle = property (_getInscribedCircle, _setInscribedCircle)

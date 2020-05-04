@@ -1,0 +1,48 @@
+class WeightConstants:  # In kg
+    def __init__ (self):
+        self._electron = 9.10938356e-31
+        self._proton = 1.672649e-27
+        self._neutron = 1.674927471e-27
+        self._earth = 5.97237e+24
+        self._moon = 7.342e+22
+        self._sun = 1.9885e+30
+        self._sgrA = 4.152 * 1.9885e+36
+
+
+    def _getElectron (self):
+        return self._electron
+
+    def _getProton (self):
+        return self._proton
+
+    def _getNeutron (self):
+        return self._neutron
+
+    def _getMoon (self):
+        return self._moon
+
+    def _getEarth (self):
+        return self._earth
+
+    def _getSun (self):
+        return self._sun
+
+    def _getSgrA (self):
+        return self._sgrA
+
+
+    def _setSomething (self, nValue):
+        print ("\n You aren't allowed to change a constant value !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There's no constant named {} here ; maybe in another namespace (m or a) !\n".format (name))
+
+
+    electron = property (_getElectron, _setSomething)
+    proton = property (_getProton, _setSomething)
+    neutron = property (_getNeutron, _setSomething)
+    earth = property (_getEarth, _setSomething)
+    moon = property (_getMoon, _setSomething)
+    sun = property (_getSun, _setSomething)
+    sgrA = property (_getSgrA, _setSomething)

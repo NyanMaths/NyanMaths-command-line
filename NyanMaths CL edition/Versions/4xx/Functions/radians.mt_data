@@ -1,0 +1,4 @@
+def radians (x):
+    "Converts x to radians"
+
+    return x / 180 * pi

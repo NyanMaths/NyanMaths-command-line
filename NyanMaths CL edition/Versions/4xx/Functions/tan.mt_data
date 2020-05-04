@@ -1,0 +1,12 @@
+def tan (x, unit = None):
+    "Returns the tangent of x (by default, x is in radians)"
+
+    if unit is None:
+        unit = _unit_
+
+    if unit == 'rad':
+        x %= pi * 2
+        return sin (x, rad) / cos (x, rad)
+
+    x %= 360
+    return sin (x, drg) / cos (x, drg)

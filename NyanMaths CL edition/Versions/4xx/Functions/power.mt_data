@@ -1,0 +1,4 @@
+def power (x, y):
+    "Returns x to the power y"
+
+    return x**y

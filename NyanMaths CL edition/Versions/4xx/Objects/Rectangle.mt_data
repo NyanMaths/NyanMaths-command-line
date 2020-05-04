@@ -1,0 +1,171 @@
+class Rectangle:
+    __type__ = "Rectangle"
+
+    def __init__ (self, length, width = None):
+        if width is None:
+            width = length
+
+        if _isRealLimit (length) and _isRealLimit (width):
+            if length >= width:
+                self._length = length
+                self._width = width
+
+            else:
+                self._length = width
+                self._width = length
+
+                print ("\n Length must be greater than width, I reversed them automatically !\n")
+
+        else:
+            print ("\n Invalid arguments : they must be positive non-zero real numbers !\n Initialization of default values...\n Done\n")
+            self._length = 1
+            self._width = 1
+
+
+    def _getLength (self):
+        return self._length
+
+    def _getWidth (self):
+        return self._width
+
+    def _getSide (self):
+        if self._length == self._width:
+            return self._length
+
+        print ("\n You can't access to this property because length != width\n")
+        raise RuntimeError
+
+    def _getPerimeter (self):
+        return 2 * (self._length + self._width)
+
+    def _getSurface (self):
+        return self._length * self._width
+
+    def _getDiagonale (self):
+        return (self._length * self._length + self._width * self._width)**0.5
+
+    def _getCircumcircle (self):
+        return Disk ((self._length * self._length + self._width * self._width)**0.5 / 2)
+
+    def _getInscribedCircle (self):
+        if self._length == self._width:
+            return Disk (self._length / 2)
+
+        else:
+            print ("\n Impossible to access to this property : length != width !\n")
+
+
+    def _setLength (self, nLength):
+        if _isRealLimit (nLength) and nLength >= self.width:
+            self._length = nLength
+
+        else:
+            print ("\n Invalid new length : it must be a positive non-zero real number greater or equals than width !\n")
+
+    def _setWidth (self, nWidth):
+        if _isRealLimit (nWidth) and nWidth <= self.length:
+            self._width = nWidth
+
+        else:
+            print ("\n Invalid new width : it must be a positive non-zero real number lesser or equals than length !\n")
+
+    def _setSide (self, nSide):
+        if _isRealLimit (nSide):
+            self._length = nSide
+            self._width = nSide
+
+        else:
+            print ("\n Invalid new side : it must be a positive non-zero real number !\n")
+
+    def _setPerimeter (self, nPerimeter):
+        print ("\n Impossible to change it !\n")
+
+    def _setSurface (self, nSurface):
+        print ("\n Impossible to change it !\n")
+
+    def _setDiagonale (self, nDiagonale):
+        print ("\n Impossible to change it !\n")
+
+    def _setCircumcircle (self, nCircumcircle):
+        print ("\n You aren't allowed to do this, sorry !\n")
+
+    def _setInscribedCircle (self, nInscribedCircle):
+        if type (nInscribedCircle) is Disk:
+            self.side = nInscribedCircle.radius * 2
+        
+        elif _isRealLimit (nInscribedCircle):
+            self.side = nInscribedCircle * 2
+        
+        else:
+            print ("\n You can give the radius of the new inscribed circle or directly the Disk, but not this !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw rectangle {5} {0} {1} {2} {3} {4}'.format (self.length, self.width, self.perimeter, self.surface, self.diagonale, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._length *= n
+            self._width *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._length /= n
+            self._width /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Rectangle (self._length * n, self._width * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Rectangle (self._length / n, self._width / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    def __eq__ (self, n):
+        if type (n) is Rectangle:
+            return self.length == n.length and self.width == n.width
+
+        print ("\n Invalid operands : they must be two rectangles !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Rectangle:
+            return self.length != n.length or self.width != n.width
+
+        print ("\n Invalid operands : they must be two rectangles !\n")
+
+
+    length = property (_getLength, _setLength)
+    width = property (_getWidth, _setWidth)
+
+    side = property (_getSide, _setSide)
+
+    perimeter = property (_getPerimeter, _setPerimeter)
+    surface = property (_getSurface, _setSurface)
+    diagonale = property (_getDiagonale, _setDiagonale)
+
+    circumcircle = property (_getCircumcircle, _setCircumcircle)
+    inscribedCircle = property (_getInscribedCircle, _setInscribedCircle)

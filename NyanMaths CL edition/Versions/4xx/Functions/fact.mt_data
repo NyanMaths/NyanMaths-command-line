@@ -1,0 +1,15 @@
+def fact (x):
+    "Returns the factorial of x\n Domain : N"
+
+    if x < 0 or type (x) is not int:
+        print ("\n Invalid parameter in fact(x) : x must be a positive integer !\n")
+
+    else:
+        n = x
+        r = 1
+    
+        while n > 1:
+            r *= n
+            n -= 1
+    
+        return r

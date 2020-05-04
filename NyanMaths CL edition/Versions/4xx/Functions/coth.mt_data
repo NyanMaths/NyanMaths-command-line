@@ -1,0 +1,4 @@
+def coth (x):
+    "Returns the hyperbolic cotangent of x (by default, x is in radians, type setUnit (drg) to switch it)"
+
+    return cosh (x) / sinh (x)

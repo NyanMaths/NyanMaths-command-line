@@ -1,0 +1,55 @@
+def temperature ():
+    print ("\n Helloooooooo !\n Thanks to this little tool, you can convert temperature units :\n\n a) Celsius --> Fahreneit\n b) Celsius --> Kelvin\n c) Fahreneit --> Celsius\n d) Fahreneit --> Kelvin\n e) Kelvin --> Celsius\n f) Kelvin --> Fahreneit")
+
+    c = input ("\n\n Choose the conversion to do : ")
+
+    if c == 'a' or c == 'A':
+        try:
+            n = float (input ("\n Input the value in °C : "))
+            print ("\n\n {0}°C = {1}°F\n".format (trans (n), trans ((1.8 * n) + 32)))
+
+        except:
+            BSOD ()
+
+    elif c == 'b' or c == 'B':
+        try:
+            n = float (input ("\n Input the value in °C : "))
+            print ("\n\n {0}°C = {1}°K\n".format (trans (n), trans (n + 273.15)))
+
+        except:
+            BSOD ()
+
+    elif c == 'c' or c == 'C':
+        try:
+            n = float (input ("\n Input the value in °F : "))
+            print ("\n\n {0}°F = {1}°C\n".format (trans (n), trans ((n - 32) / 1.8)))
+
+        except:
+            BSOD ()
+
+    elif c == 'd' or c == 'D':
+        try:
+            n = float (input ("\n Input the value in °F : "))
+            print ("\n\n {0}°F = {1}°K\n".format (trans (n), trans ((n - 32) / 1.8 + 273.15)))
+
+        except:
+            BSOD ()
+
+    elif c == 'e' or c == 'E':
+        try:
+            n = float (input ("\n Input the value in °K : "))
+            print ("\n\n {0}°K = {1}°C\n".format (trans (n), trans (n - 273.15)))
+
+        except:
+            BSOD (True)
+
+    elif c == 'f' or c == 'F':
+        try:
+            n = float (input ("\n Input the value in °K : "))
+            print ("\n\n {0}°K = {1}°F\n".format (trans (n), trans ((n - 273.15) * 1.8 + 32)))
+
+        except:
+            BSOD ()
+
+    else:
+        BSOD (True)

@@ -1,0 +1,91 @@
+class Pyramid:
+    __type__ = "Pyramid"
+    
+    def __init__ (self, baseSurface, height):
+        if _isRealLimit (baseSurface) and _isRealLimit (height):
+            self._baseSurface = baseSurface
+            self._height = height
+
+        else:
+            print ("\n Invalid arguments : they must be positive non-zero real numbers !\n Initialization of default values...\n Done\n")
+            self._baseSurface = 1
+            self._height = 1
+
+
+    def _getBaseSurface (self):
+        return self._baseSurface
+
+    def _getHeight (self):
+        return self._height
+
+    def _getVolume (self):
+        return self._baseSurface * self._height / 3
+
+
+    def _setBaseSurface (self, nBaseSurface):
+        if _isRealLimit (nBaseSurface):
+            self._baseSurface = nBaseSurface
+
+        else:
+            print ("\n Invalid new base surface : it must be a positive non-zero real number !\n")
+
+    def _setHeight (self, nHeight):
+        if _isRealLimit (nHeight):
+            self._height = nHeight
+
+        else:
+            print ("\n Invalid new height : it must be a positive non-zero real number !\n")
+
+    def _setVolume (self, nVolume):
+        print ("\n Impossible to change it !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw pyramid {3} {0} {1} {2}'.format (self.baseSurface, self.height, self.volume, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._baseSurface *= n * n
+            self._height *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._baseSurface /= n * n
+            self._height /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Pyramid (self._baseSurface * n * n, self._height * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Pyramid (self._baseSurface / (n * n), self._height / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    baseSurface = property (_getBaseSurface, _setBaseSurface)
+    height = property (_getHeight, _setHeight)
+
+    volume = property (_getVolume, _setVolume)

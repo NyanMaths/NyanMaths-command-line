@@ -1,0 +1,45 @@
+def primes ():
+    n = input ("\n This application computes all prime numbers\n from an odd positive non-zero number to... Another greater positive number !\n Beware : the last numbers will be deleted !\n\n Calculate the prime numbers from ")
+    MAX = input ("\n To ")
+
+    try:
+        n = int (n)
+        MAX = int (MAX)
+
+        assert n % 2 == 1
+        assert n > 0
+        assert n < MAX
+        assert MAX < 100000001
+
+    except:
+        print ("\n\n Do not try to crash me !\n")
+        return 1
+
+    else:
+        MAX += 1
+
+        open ("User data/Prime Numbers.txt", 'w').close ()
+        
+        with open ("User data/Prime Numbers.txt", 'a') as numbers_file:
+            if n < 4:
+                numbers_file.write ("2\n3\n")
+                n = 5
+
+            while n < MAX:
+                div = 2
+                sqrtn = int (n**0.5 + 1)
+                b = 1
+                
+                while div < sqrtn:
+                    if not n % div:
+                        b = 0
+                        break
+                    
+                    div += 1
+
+                if b:
+                    print (n, file = numbers_file)
+
+                n += 1
+
+        print ("\n\n The prime numbers are written in C:/MemeTech/NyanMaths CL Launcher/User data/Prime Numbers.txt\n Why not keep this file ?\n")

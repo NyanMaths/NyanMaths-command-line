@@ -1,0 +1,20 @@
+def doc (x):
+    "Slick character...  :-D"
+
+    typeOfX = _strType (x)
+
+    if typeOfX == 'number':
+        print ("\n It's just a number !\n It may be an integer, a float or a complex.\n")
+
+    elif typeOfX == 'string':
+        print ("\n You already know what's a string, slick character...\n")
+
+    elif typeOfX == 'function':
+        if x.__doc__ != None:
+            print ("\n " + x.__doc__ + "\n")
+
+        else:
+            print ("\n There's no documentation for this function yet, sorry !\n Please wait coming updates...\n")
+
+    else:
+        system ("Documentation.pyw {}".format (_strType (x)))

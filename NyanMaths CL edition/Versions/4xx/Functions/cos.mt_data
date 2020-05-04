@@ -1,0 +1,12 @@
+def cos (x, unit = None):
+    "Returns the cosine of x (by default, x is in radians)\n Domain : C"
+
+    if unit is None:
+        unit = _unit_
+
+    if unit == 'rad':
+        x %= pi * 2
+        return (e**(x * 1j) + e**(-x * 1j)) / 2
+
+    x %= 360
+    return (e**(x / 180 * pi * 1j) + e**(-x / 180 * pi * 1j)) / 2

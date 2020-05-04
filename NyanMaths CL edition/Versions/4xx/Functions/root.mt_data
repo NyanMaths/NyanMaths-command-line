@@ -1,0 +1,4 @@
+def root (x, y):
+    "Returns x th root of y"
+
+    return y**(1 / x)

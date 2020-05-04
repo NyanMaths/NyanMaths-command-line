@@ -1,0 +1,4 @@
+def sec (x):
+    "Returns the secant of x (by default, x is in radians)"
+
+    return 1 / cos (x)

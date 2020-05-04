@@ -1,0 +1,89 @@
+class Polynomial:
+    def __init__ (self, a, b, c):
+        if isReal (a) and isReal (b) and isReal (c):
+            if not a:
+                print ("\n You can't give me 0 for 'a' because it won't be second degree polynomial !\n")
+
+            else:
+                self._a = a
+                self._b = b
+                self._c = c
+
+        else:
+            print ("\n Invalid arguments : they must be real numbers (a != 0) !\n I'll initialize default values...\n")
+            self._a = 1
+            self._b = 0
+            self._c = 0
+
+
+    def _getA (self):
+        return self._a
+
+    def _getB (self):
+        return self._b
+
+    def _getC (self):
+        return self._c
+
+    def _getRoot1 (self):
+        return (-self._b - (self._b * self._b - 4 * self._a * self._c)**0.5) / (2 * self._a)
+
+    def _getRoot2 (self):
+        return (-self._b + (self._b * self._b - 4 * self._a * self._c)**0.5) / (2 * self._a)
+
+    def _getSummit (self):
+        return Coords (-self._b / (2 * self._a), self.evaluate (-self._b / (2 * self._a)))
+
+    def _getDsc (self):
+        return self._b * self._b - 4 * self._a * self._c
+
+    def _getReducedDsc (self):
+        return (self._b * self._b / 4) - self._a * self._c
+
+
+    def _setA (self, nA):
+        if isReal (nA) and nA:
+            self._a = nA
+
+        else:
+            print ("\n Please stop trying to make me crash !\n")
+
+    def _setB (self, nB):
+        if isReal (nB):
+            self._b = nB
+
+        else:
+            print ("\n Invalid new value : it must be a real number !\n")
+
+    def _setC (self, nC):
+        if isReal (nC):
+            self._c = nC
+
+        else:
+            print ("\n Invalid new value : it must be a real number !\n")
+
+
+    def evaluate (self, x):
+        return self._a * x * x + self._b * x + self._c
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        if not self.dsc:
+            return "\n Type : Polynomial (2nd degree)\n Expression : {0}x² + {1}x + {2}\n Discriminant : {3}\n Root :  {4}\n Summit :  {5}\n Derivee : {6}x + {1}\n".format (trans (self.a), trans (self.b), trans (self.c), trans (self.dsc), trans (self.root1), self.summit, trans (self._a * 2))
+
+        return "\n Type : Polynomial (2nd degree)\n Expression : {0}x² + {1}x + {2}\n Discriminant : {3}\n Reduced discriminant : {4}\n Root 1 :  {5}\n Root 2 :  {6}\n Summit :  {7}\n Derivee : {8}x + {1}\n".format (trans (self.a), trans (self.b), trans (self.c), trans (self.dsc), trans (self.reducedDsc), trans (self.root1), trans (self.root2), self.summit, trans (self._a * 2))
+
+
+    a = property (_getA, _setA)
+    b = property (_getB, _setB)
+    c = property (_getC, _setC)
+
+    root1 = property (_getRoot1)
+    root2 = property (_getRoot2)
+
+    summit = property (_getSummit)
+    dsc = property (_getDsc)
+    reducedDsc = property (_getReducedDsc)

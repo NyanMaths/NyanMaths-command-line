@@ -1,0 +1,53 @@
+class MeasurementConstants:  # In meters
+    def __init__ (self):
+        self._inch = 0.0254
+        self._foot = 0.3048
+        self._yard = 0.9144
+        self._nauticalMile = 1852
+        self._league = 4828.032
+        self._ua = 149597870000
+        self._ly = 9460730472580800
+        self._parsec = 30856775670528308
+
+
+    def _getInch (self):
+        return self._inch
+
+    def _getFoot (self):
+        return self._foot
+
+    def _getYard (self):
+        return self._yard
+
+    def _getNauticalMile (self):
+        return self._nauticalMile
+
+    def _getLeague (self):
+        return self._league
+
+    def _getUa (self):
+        return self._ua
+
+    def _getLy (self):
+        return self._ly
+
+    def _getParsec (self):
+        return self._parsec
+
+
+    def _setSomething (self, nValue):
+        print ("\n You aren't allowed to change a constant value !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There's no constant named {} here ; maybe in another namespace (a or w) !\n".format (name))
+
+
+    inch = property (_getInch, _setSomething)
+    foot = property (_getFoot, _setSomething)
+    yard = property (_getYard, _setSomething)
+    nauticalMile = property (_getNauticalMile, _setSomething)
+    league = property (_getLeague, _setSomething)
+    ua = property (_getUa, _setSomething)
+    ly = property (_getLy, _setSomething)
+    parsec = property (_getParsec, _setSomething)

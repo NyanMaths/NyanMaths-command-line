@@ -1,0 +1,22 @@
+def UIR ():
+    print ("\n Thanks to this application, you can calculate the relationship between intensity, electric tension and resistance.\n Give me 0 for the value you want to get.")
+
+    try:
+        u = float (input ("\n Input elecric tension :  "))
+        r = float (input ("\n Resistance, please :  "))
+        i = float (input ("\n To finish, intensity (Not \"please\"  :-D) :  "))
+
+        assert (u == 0) ^ (r == 0) ^ (i == 0)
+
+    except:
+        print ("\n\n Do not try to crash me !\n")
+
+    else:
+        if u == 0:
+            print ("\n Electric tension :  {}\n".format (trans (i * r)))
+
+        elif i == 0:
+            print ("\n Intensity :  {}\n".format (trans (u / r)))
+
+        else:
+            print ("\n Resistance :  {}\n".format (trans (u / i)))

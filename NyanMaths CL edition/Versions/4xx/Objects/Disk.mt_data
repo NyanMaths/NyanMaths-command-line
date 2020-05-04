@@ -1,0 +1,115 @@
+class Disk:
+    __type__ = "Disk"
+    
+    def __init__ (self, radius):
+        if _isRealLimit (radius):
+            self._radius = radius
+
+        else:
+            print ("\n Invalid radius : it must be a positive non-zero real number !\n Initialization of default value...\n Done\n")
+            self._radius = 1
+
+
+    def _getRadius (self):
+        return self._radius
+
+    def _getDiameter (self):
+        return self._radius * 2
+
+    def _getPerimeter (self):
+        return self._radius * 2 * pi
+
+    def _getSurface (self):
+        return self._radius**2 * pi
+
+
+    def _setRadius (self, nRadius):
+        if _isRealLimit (nRadius):
+            self._radius = nRadius
+
+        else:
+            print ("\n Invalid new radius : it must be a positive non-zero real number !\n")
+
+    def _setDiameter (self, nDiameter):
+        if _isRealLimit (nDiameter):
+            self._radius = nDiameter / 2
+
+        else:
+            print ("\n Invalid new diameter : it must be a positive non-zero real number !\n")
+
+    def _setPerimeter (self, nPerimeter):
+        if _isRealLimit (nPerimeter):
+            self._radius = nPerimeter / 2 / pi
+
+        else:
+            print ("\n Invalid new perimeter : it must be a positive non-zero real number !\n")
+
+    def _setSurface (self, nSurface):
+        if _isRealLimit (nSurface):
+            self._radius = (nSurface / pi)**0.5
+
+        else:
+            print ("\n Invalid new surface : it must be a positive non-zero real number !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There's no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw disk {4} {0} {1} {2} {3}'.format (self.radius, self.diameter, self.perimeter, self.surface, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._radius *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._radius /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Disk (self._radius * n)
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Disk (self._radius / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+    def __eq__ (self, n):
+        if type (n) is Disk:
+            return self.radius == n.radius
+
+        print ("\n Invalid operands : they must be two disks !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Disk:
+            return self.radius != n.radius
+
+        print ("\n Invalid operands : they must be two disks !\n")
+
+
+    radius = property (_getRadius, _setRadius)
+
+    diameter = property (_getDiameter, _setDiameter)
+    perimeter = property (_getPerimeter, _setPerimeter)
+    surface = property (_getSurface, _setSurface)

@@ -1,0 +1,115 @@
+class Cube:
+    __type__ = "Cube"
+    
+    def __init__ (self, edge):
+        if _isRealLimit (edge):
+            self._edge = edge
+
+        else:
+            print ("\n Invalid edge : it must be a positive non-zero real number !\n Initialization of default values...\n Done\n")
+            self._edge = 1
+
+
+    def _getEdge (self):
+        return self._edge
+
+    def _getVolume (self):
+        return self._edge**3
+
+    def _getSurface (self):
+        return self._edge**2 * 6
+
+    def _getDiagonale (self):
+        return self._edge * 1.732050807568878
+
+
+    def _setEdge (self, nEdge):
+        if _isRealLimit (nEdge):
+            self._edge = nEdge
+
+        else:
+            print ("\n Invalid new edge : it must be a positive non-zero real number !\n")
+
+    def _setVolume (self, nVolume):
+        if _isRealLimit (nVolume):
+            self._edge = nVolume**(1 / 3)
+
+        else:
+            print ("\n Invalid new volume : it must be a positive non-zero real number !\n")
+
+    def _setSurface (self, nSurface):
+        if _isRealLimit (nSurface):
+            self._edge = (nSurface / 6)**0.5
+
+        else:
+            print ("\n Invalid new surface : it must be a positive non-zero real number !\n")
+
+    def _setDiagonale (self, nDiadonale):
+        if _isRealLimit (nDiagonale):
+            self._edge = nDiadonale / 1.732050807568878
+
+        else:
+            print ("\n Invalid new diagonale : it must be a positive non-zero real number !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n I'm so sorry, but there's no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw cube {4} {0} {1} {2} {3}'.format (self.edge, self.volume, self.surface, self.diagonale, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._edge *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._edge /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Cube (self._edge * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Cube (self._edge / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    def __eq__ (self, n):
+        if type (n) is Cube:
+            return self.edge == n.edge
+
+        print ("\n Invalid operands : they must be two cubes !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Cube:
+            return self.edge != n.edge
+
+        print ("\n Invalid operands : they must be two cubes !\n")
+
+
+    edge = property (_getEdge, _setEdge)
+
+    volume = property (_getVolume, _setVolume)
+    surface = property (_getSurface, _setSurface)
+    diagonale = property (_getDiagonale, _setDiagonale)

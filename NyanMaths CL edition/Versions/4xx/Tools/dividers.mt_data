@@ -1,0 +1,35 @@
+def dividers ():
+    n = input ("\n What is the number of which you want to know the dividers :  ")
+
+    try:
+        print ("\n")
+        n = int (n)
+
+        assert n < 1000000001 and n >= 0
+
+    except:
+        print ("\n Do not try to make me crash !\n")
+
+    else:
+        if n in [0, 1]:
+            print ("\n Only divisible by itself, but not prime !\n")
+
+        elif n in [2, 3]:
+            print ("\n There's no divider : {} is a prime !\n".format (n))
+
+        else:
+            x = 0
+            div = int (n / 2) + 1
+    
+            while div > 1:
+                if not n % div:
+                    print (" By {0}       {1} times".format (div, int (n / div)))
+                    x += 1
+    
+                div -= 1
+    
+            if x > 0:
+                print ("\n That's all !\n")
+    
+            else:
+                print ("\n There's no divider : {} is a prime !\n".format (n))

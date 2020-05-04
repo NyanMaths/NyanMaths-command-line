@@ -1,0 +1,11 @@
+def setPrecision (x):
+    "Changes the display precision (from 0 to 12 decimals, 9 recommanded)"
+
+    if x > -1 and x < 13:
+        _precision_ = x
+        open ('Versions/Conf.pastouche', 'w').write ('{0} {1}'.format (x, _unit_))
+
+        print ("\n Precision changed ! Restart needed to apply.\n")
+
+    else:
+        print ("\n You had to input a number between 0 and 12 !\n ")

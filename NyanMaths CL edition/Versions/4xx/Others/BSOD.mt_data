@@ -1,0 +1,6 @@
+def BSOD (ex = False):
+    system ("BSOD_MEME.pyw")
+    print ("\n")
+
+    if ex:
+        raise KeyboardInterrupt

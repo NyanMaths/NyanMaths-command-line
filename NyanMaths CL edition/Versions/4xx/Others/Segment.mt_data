@@ -1,0 +1,75 @@
+class Segment:
+    __type__ = 'Segment'
+
+    def __init__ (self, a, b, c = None, d = None):
+        if (type (a) is Coords) and (type (b) is Coords) and (c is None) and (d is None):
+            self._x1 = a.x
+            self._y1 = a.y
+
+            self._x2 = b.x
+            self._y2 = b.y
+
+        elif isReal (a) and isReal (b) and isReal (c) and isReal (d):
+            self._x1 = a
+            self._y1 = b
+
+            self._x2 = c
+            self._y2 = d
+
+        else:
+            print ("\n Invalid extremities : it must be coordinates !")
+            self._x1 = 0
+            self._y1 = 0
+
+            self._x2 = 0
+            self._y2 = 0
+
+
+    def _getA (self):
+        return Coords (self._x1, self._y1)
+
+    def _getB (self):
+        return Coords (self._x2, self._y2)
+
+    def _getLength (self):
+        return (((self._x2 - self._x1)**2 + (self._y2 - self._y1)**2)**0.5).real
+
+
+    def _setA (self, n):
+        if type (n) is not list and type (n) is Coords:
+            self._x1 = n.x
+            self._y1 = n.y
+
+        elif isReal (n[0]) and isReal (n[1]):
+            self._x1 = n[0]
+            self._y1 = n[1]
+
+        else:
+            print ("\n Invalid new coordinates of a !\n")
+
+    def _setB (self, n):
+        if type (n) is not list and type (n) is Coords:
+            self._x2 = n.x
+            self._y2 = n.y
+
+        elif isReal (n[0]) and isReal (n[1]):
+            self._x2 = n[0]
+            self._y2 = n[1]
+
+        else:
+            print ("\n Invalid new coordinates of b !\n")
+
+    def _setLength (self, nLength):
+        print ("\n Impossible to do this, I'm sorry !\n")
+
+
+    def __repr__ (self):
+        if self.a != self.b:
+            return "\n Start point : {0}\n Finish point : {1}\n Length : {2}\n".format (self.a, self.b, trans (self.length))
+
+        return "\n Only one point : {}\n".format (self.a)
+
+
+    a = property (_getA, _setA)
+    b = property (_getB, _setB)
+    length = property (_getLength, _setLength)

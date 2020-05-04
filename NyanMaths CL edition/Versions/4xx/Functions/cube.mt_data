@@ -1,0 +1,4 @@
+def cube (x):
+    "Returns the cube of x\n Domain : C"
+
+    return x * x * x

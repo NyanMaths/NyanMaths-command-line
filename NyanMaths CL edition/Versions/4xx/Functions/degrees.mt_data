@@ -1,0 +1,4 @@
+def degrees (x):
+    "Converts x to degrees"
+
+    return x * 180 / pi

@@ -1,0 +1,117 @@
+class Ball:
+    __type__ = "Ball"
+
+    def __init__ (self, radius = 1):
+        if _isRealLimit (radius):
+            self._radius = radius
+
+        else:
+            print ("\n Invalid radius : it must be a positive non-zero real number !\n Initialization of default value...\n Done\n")
+            self._radius = 1
+
+
+    def _getRadius (self):
+        return self._radius
+
+    def _getDiameter (self):
+        return self._radius * 2
+
+    def _getVolume (self):
+        return self._radius**3 * (4 / 3) * pi
+
+    def _getSurface (self):
+        return self._radius**2 * 4 * pi
+
+
+    def _setRadius (self, nRadius):
+        if _isRealLimit (nRadius):
+            self._radius = nRadius
+
+        else:
+            print ("\n Invalid new radius : it must be a positive non-zero real number !\n")
+
+    def _setDiameter (self, nDiameter):
+        if _isRealLimit (nDiameter):
+            self._radius = nDiameter / 2
+
+        else:
+            print ("\n Invalid new diameter : it must be a positive non-zero real number !\n")
+
+    def _setVolume (self, nVolume):
+        if _isRealLimit (nVolume):
+            self._radius = (nVolume / pi * 0.75)**(1 / 3)
+
+        else:
+            BSOD ()
+
+    def _setSurface (self, nSurface):
+        if _isRealLimit (nSurface):
+            self._radius = (nSurface / 4 / pi)**0.5
+
+        else:
+            print ("\n Invalid new surface : it must be a positive non-zero real number !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There's no attribute named \"{}\" in this object, sorry !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw ball {4} {0} {1} {2} {3}'.format (self.radius, self.diameter, self.volume, self.surface, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._radius *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._radius /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Ball (self._radius * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Ball (self._radius / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+    def __eq__ (self, n):
+        if type (n) is Ball:
+            return self.radius == n.radius
+
+        print ("\n Invalid operands : they must be two balls !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Ball:
+            return self.radius != n.radius
+
+        print ("\n Invalid operands : they must be two balls !\n")
+
+
+    radius = property (_getRadius, _setRadius)
+
+    diameter = property (_getDiameter, _setDiameter)
+    volume = property (_getVolume, _setVolume)
+    surface = property (_getSurface, _setSurface)

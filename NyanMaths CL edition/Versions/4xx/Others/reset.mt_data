@@ -1,0 +1,29 @@
+def reset ():
+    code = input ("\n Do you really want to remove all your settings and data ?\n Input 6942 if you really want to do this :  ")
+
+    if code == '6942':
+        if exists ('User data'):
+            rmtree ('User data')
+        
+        if exists ('User Functions'):
+            rmtree ('User Functions')
+        
+        if exists ('User constants'):
+            rmtree ('User constants')
+
+        if exists ('Versions/Modules/__pycache__'):
+            rmtree ('Versions/Modules/__pycache__')
+        
+        if exists ('Versions/Tools/__pycache__'):
+            rmtree ('Versions/Tools/__pycache__')
+
+        mkdir ('User data')
+        mkdir ('User Functions')
+        mkdir ('User constants')
+
+        open ('Versions/Conf.pastouche', 'w').write ('9 rad')
+
+        print ("\n Application reseted !\n Restart needed to apply.\n")
+
+    else:
+        print ("\n Alright, I won't do this !\n")

@@ -1,0 +1,10 @@
+def divisible (n, x):
+    "Says if x is a divider of n"
+
+    if (type (n) is int) and (type (x) is int):
+        return bool (not n % x)
+
+    else:
+        print ("\n Did you try to crash me ???\n Kill in 2 seconds...", end = '')
+        sleep (2)
+        BSOD ()

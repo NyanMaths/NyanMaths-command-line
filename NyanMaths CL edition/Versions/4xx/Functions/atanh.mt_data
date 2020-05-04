@@ -1,0 +1,7 @@
+def atanh (x):
+    "Returns the hyperbolic arctangent of x in radians by default"
+
+    if _unit_ == 'rad':
+        return 0.5 * log ((1 + x) / (1 - x))
+
+    return log ((1 + x) / (1 - x)) * 90 / pi

@@ -1,0 +1,10 @@
+def cosh (x, unit = None):
+    "Returns the hyperbolic cosine of x (by default, x is in radians)\n Domain : C"
+
+    if unit is None:
+        unit = _unit_
+
+    if unit == 'rad':
+        return (e**(x) + e**(-x)) / 2
+
+    return (e**(x / 180 * pi) + e**(-x / 180 * pi)) / 2

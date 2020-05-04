@@ -1,0 +1,19 @@
+def gcd (x, y):
+    "Returns the greatest common divider between x and y"
+
+    if x < 1 or y < 1 or (type (x) is not int) or (type (y) is not int):
+        print ("\n Invalid argument : x and y must be positive integers !\n")
+
+    else:
+        if x == y:
+            return x
+
+        div = int (x / 2 + 1)
+
+        if y > x:
+            div = int (y / 2 + 1)
+
+        while x % div or y % div:
+            div -= 1
+
+        return div

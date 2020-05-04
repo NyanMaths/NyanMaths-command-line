@@ -1,0 +1,156 @@
+class Square:
+    __type__ = "Square"
+
+    def __init__ (self, side):
+        if side > 0:
+            self._side = side
+
+        else:
+            print ("\n Invalid side : it must be a positive non-zero real number !\n Initialization of default value...\n Done\n")
+            self._side = 1
+
+
+    def _getSide (self):
+        return self._side
+
+    def _getPerimeter (self):
+        return self._side * 4
+
+    def _getSurface (self):
+        return self._side**2
+
+    def _getApothem (self):
+        return self._side / 2
+
+    def _getDiagonale (self):
+        return self._side * 2**0.5
+
+    def _getCircumcircle (self):
+        return Disk ((self._side * 2**0.5).real / 2)
+
+    def _getInscribedCircle (self):
+        return Disk (self._side / 2)
+
+
+    def _setSide (self, nSide):
+        if nSide > 0:
+            self._side = nSide
+
+        else:
+            print ("\n Invalid new side : it must be a positive non-zero real number !\n")
+
+    def _setPerimeter (self, nPerimeter):
+        if nPerimeter > 0:
+            self._side = nPerimeter / 4
+
+        else:
+            print ("\n Invalid new perimeter : it must be a positive non-zero real number !\n")
+
+    def _setSurface (self, nSurface):
+        if nSurface > 0:
+            self._side = nSurface**0.5
+
+        else:
+            print ("\n Invalid new surface : it must be a positive non-zero real number !\n")
+
+    def _setApothem (self, nApothem):
+        if _isRealLimit (nApothem):
+            self._side = nApothem * 2
+
+        else:
+            print ("\n Invalid new apothem : it must be a positive non-zero real number !\n")
+
+    def _setDiagonale (self, nDiagonale):
+        if _isRealLimit (nDiagonale):
+            self._side = nDiagonale / 2**0.5
+
+        else:
+            print ("\n Invalid new apothem : it must be a positive non-zero real number !\n")
+
+    def _setCircumcircle (self, n):
+        if _isRealLimit (n):
+            self._side = (n * 2**0.5).real
+
+        elif type (x) is Disk:
+            self._side = (n.radius * 2**0.5).real
+
+        else:
+            print ("\n Invalid new circumscribed circle : it could be a Disk or a positive non-zero real number !\n")
+
+    def _setInscribedCircle (self, n):
+        if _isRealLimit (n):
+            self._side = n * 2
+
+        elif type (n) is Disk:
+            self._side = n.radius * 2
+
+        else:
+            print ("\n Invalid new inscribed circle : it could be a Disk or a positive non-zero real number !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw square {5} {0} {1} {2} {3} {4}'.format (self.side, self.perimeter, self.surface, self.apothem, self.diagonale, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._side *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._side /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Square (self._side * n)
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Square (self._side / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    def __eq__ (self, n):
+        if type (n) is Square:
+            return self.side == n.side
+
+        print ("\n Invalid operands : they must be two squares !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Square:
+            return self.side != n.side
+
+        print ("\n Invalid operands : they must be two squares !\n")
+
+
+    side = property (_getSide, _setSide)
+
+    perimeter = property (_getPerimeter, _setPerimeter)
+    surface = property (_getSurface, _setSurface)
+    apothem = property (_getApothem, _setApothem)
+    diagonale = property (_getDiagonale, _setDiagonale)
+
+    circumcircle = property (_getCircumcircle, _setCircumcircle)
+    inscribedCircle = property (_getInscribedCircle, _setInscribedCircle)

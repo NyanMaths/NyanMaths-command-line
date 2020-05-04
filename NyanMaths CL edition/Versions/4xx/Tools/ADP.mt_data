@@ -1,0 +1,27 @@
+def ADP ():
+    print ("\n\n This tool tell you if a positive integer is abondant, deficient or perfect !")
+
+    try:
+        x = int (input ("\n Enter the number :  "))
+
+    except:
+        print ("\n\n Do not try to crash me !\n")
+
+    else:
+        s = 0
+        i = int (x / 2) + 1
+        
+        while i != 0:
+            if not x % i:
+                s += i
+            
+            i -= 1
+        
+        if s > x:
+            print ("\n\n {} is abondant !\n\n".format (x))
+
+        elif s < x:
+            print ("\n\n {} is deficient !\n\n".format (x))
+        
+        else:
+            print ("\n\n {} is perfect !\n\n".format (x))

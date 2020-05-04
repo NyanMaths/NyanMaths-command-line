@@ -1,0 +1,4 @@
+def sRadius (x):
+    "Compute the Schwarzschild radius of the object weighting x in meters"
+
+    return (2 * 6.67408e-11 * x) / 299792458**2

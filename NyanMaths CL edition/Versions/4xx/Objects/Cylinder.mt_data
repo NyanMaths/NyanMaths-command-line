@@ -1,0 +1,133 @@
+class Cylinder:
+    __type__ = "Cylinder"
+    
+    def __init__ (self, radius, height):
+        if _isRealLimit (radius) and _isRealLimit (height):
+            self._radius = radius
+            self._height = height
+
+        else:
+            print ("\n Invalid radius : it must be a positive non-zero real number !\n Initialization of default value...\n Done\n")
+            self._radius = 1
+            self._height = 1
+
+
+    def _getRadius (self):
+        return self._radius
+
+    def _getDiameter (self):
+        return self._radius * 2
+
+    def _getHeight (self):
+        return self._height
+    
+    def _getVolume (self):
+        return self._radius**2 * pi * self._height
+
+    def _getBaseSurface (self):
+        return self._radius**2 * pi
+
+    def _getSurface (self):
+        return 2 * pi * self._radius * self._height + self._radius**2 * pi * 2
+
+
+    def _setRadius (self, nRadius):
+        if _isRealLimit (nRadius):
+            self._radius = nRadius
+
+        else:
+            print ("\n Invalid new radius : it must be a positive non-zero real number !\n")
+
+    def _setDiameter (self, nDiameter):
+        if _isRealLimit (nDiameter):
+            self._radius = nDiameter / 2
+
+        else:
+            print ("\n Invalid new diameter : it must be a positive non-zero real number !\n")
+
+    def _setHeight (self, nHeight):
+        if _isRealLimit (nHeight):
+            self._height = nHeight
+
+        else:
+            print ("\n Invalid new height : it must be a positive non-zero real number !\n")
+
+    def _setVolume (self, nVolume):
+        print ("\n Impossible to change it !\n")
+
+    def _setBaseSurface (self, nBaseSurface):
+        if _isRealLimit (nBaseSurface):
+            self._radius = (nBaseSurface / pi)**0.5
+
+        else:
+            print ("\n Invalid new base surface : it must be a positive non-zero real number !\n")
+
+    def _setSurface (self, nSurface):
+        print ("\n Impossible to change it !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        print ("\n Loading resources...")
+        system ('Graphics.pyw cylinder {6} {0} {1} {2} {3} {4} {5}'.format (self.radius, self.diameter, self.height, self.baseSurface, self.volume, self.surface, _precision_))
+        return ''
+
+
+    def __imul__ (self, n):
+        if _isRealLimit (n):
+            self._radius *= n
+            self._height *= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __itruediv__ (self, n):
+        if _isRealLimit (n):
+            self._radius /= n
+            self._height /= n
+
+        else:
+            print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+        return self
+
+    def __mul__ (self, n):
+        if _isRealLimit (n):
+            return Cylinder (self._radius * n, self._height * n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __truediv__ (self, n):
+        if _isRealLimit (n):
+            return Cylinder (self._radius / n, self._height / n)
+
+        print ("\n Invalid coefficient : it must be a positive non-zero real number !\n")
+
+    def __rmul__ (self, n):
+        return self * n
+
+
+    def __eq__ (self, n):
+        if type (n) is Cylinder:
+            return self.radius == n.radius and self.height == n.height
+
+        print ("\n Invalid operands : they must be two cylinders !\n")
+
+    def __ne__ (self, n):
+        if type (n) is Cylinder:
+            return self.radius != n.radius or self.height != n.height
+
+        print ("\n Invalid operands : they must be two cylinders !\n")
+
+
+    radius = property (_getRadius, _setRadius)
+    height = property (_getHeight, _setHeight)
+    
+    diameter = property (_getDiameter, _setDiameter)
+    baseSurface = property (_getBaseSurface, _setBaseSurface)
+    volume = property (_getVolume, _setVolume)
+    surface = property (_getSurface, _setSurface)

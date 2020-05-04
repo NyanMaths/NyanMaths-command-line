@@ -1,0 +1,4 @@
+def sech (x):
+    "Returns the hyperbolic secant of x (by default, x is in radians, type setUnit (drg) to switch it)"
+
+    return 1 / cosh (x)

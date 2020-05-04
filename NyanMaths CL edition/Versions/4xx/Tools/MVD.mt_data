@@ -1,0 +1,24 @@
+def MVD ():
+    print ("\n Thanks to this tool, you can calculate the relationship between density, weight and volume.\n Give me 0 for the value you want to get.")
+
+    try:
+        r = float (input ("\n Input density :  "))
+        m = float (input ("\n Weight, please :  "))
+        v = float (input ("\n To finish, volume (Not \"please\") :  "))
+
+        assert (r == 0) ^ (m == 0) ^ (v == 0)
+
+    except:
+        print ("\n\n Do not try to crash me !\n Kill in two seconds...")
+        sleep (2)
+        BSOD ()
+
+    else:
+        if r == 0:
+            print ("\n Density :  {}\n".format (trans (m / v)))
+
+        elif m == 0:
+            print ("\n Weight :  {}\n".format (trans (r * v)))
+
+        else:
+            print ("\n Volume :  {}\n".format (trans (m / r)))

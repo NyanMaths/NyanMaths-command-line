@@ -1,0 +1,18 @@
+def pythagore (a, b, c):
+    "Returns the value of the side which you want to compute (put 0 insthead of it)\n or says if the triagle is right-angled if you give all values."
+
+    if (a == 0) ^ (b == 0) ^ (c == 0):
+        if not a:
+            return (c * c - b * b)**0.5
+
+        elif not b:
+            return (c * c - a * a)**0.5
+
+        else:
+            return (a * a + b * b)**0.5
+
+    if round (a * a + b * b, 10) == round (c * c, 10):
+        print ("\n This triangle is right-angled !\n")
+
+    else:
+        print ("\n This triangle is not right-angled !\n")

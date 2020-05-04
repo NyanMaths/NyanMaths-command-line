@@ -1,0 +1,4 @@
+def sqrt (x):
+    "Returns the square root of x"
+
+    return x**0.5

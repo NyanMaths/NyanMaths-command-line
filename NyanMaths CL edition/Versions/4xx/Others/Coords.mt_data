@@ -1,0 +1,52 @@
+class Coords:
+    __type__ = "Coords"
+
+    def __init__ (self, x, y):
+        if isReal (x) and isReal (y):
+            self._x = x
+            self._y = y
+
+        else:
+            print ("\n Invalid coordinates, please stop making fun of me lil script kiddy !\n")
+            self._x = 0
+            self._y = 0
+
+
+    def _getX (self):
+        return self._x
+
+    def _getY (self):
+        return self._y
+
+
+    def _setX (self, nX):
+        if isReal (nX):
+            self._x = nX
+
+        else:
+            print ("\n Please stop it now, slick character !\n")
+
+    def _setY (self, nY):
+        if isReal (nY):
+            self._y = nY
+
+        else:
+            print ("\n Please stop it now, slick character !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There is no attribute named \"{}\" in this object !\n".format (name))
+
+    def __repr__ (self):
+        return "({0} ; {1})".format (trans (self.x), trans (self.y))
+
+
+    def __eq__ (self, n):
+        return self.x == n.x and self.y == n.y
+
+    def __ne__ (self, n):
+        return self.x != n.x or self.y != n.y
+
+
+    x = property (_getX, _setX)
+    y = property (_getY, _setY)

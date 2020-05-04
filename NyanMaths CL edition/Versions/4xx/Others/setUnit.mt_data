@@ -1,0 +1,11 @@
+def setUnit (x):
+    "Change the default angles unit (degrees or radians)"
+
+    if x == 'drg' or x == 'rad':
+        _unit_ = x
+        open ('Versions/Conf.pastouche', 'w').write ('{0} {1}'.format (_precision_, x))
+
+        print ("\n Unit changed ! Restart needed to apply.\n")
+
+    else:
+        print ("\n You had to input drg or rad !\n ")

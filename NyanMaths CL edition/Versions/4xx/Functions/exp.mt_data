@@ -1,0 +1,4 @@
+def exp (x):
+    "Returns e to the power x"
+
+    return e**x

@@ -1,0 +1,32 @@
+class AccelerationConstants:  # In m / s²
+    def __init__ (self):
+        self._moon = 1.622
+        self._earth = 9.80665
+        self._sun = 273.95
+
+
+    def _getMoon (self):
+        return self._moon
+
+    def _getEarth (self):
+        return self._earth
+
+    def _getSun (self):
+        return self._sun
+
+    def _getMLG (self):
+        BSOD (True)
+
+
+    def _setSomething (self, nValue):
+        print ("\n You aren't allowed to change a constant value !\n")
+
+
+    def __getattr__ (self, name):
+        print ("\n There's no constant named {} here ; maybe in another namespace (m or w) !\n".format (name))
+
+
+    moon = property (_getMoon, _setSomething)
+    earth = property (_getEarth, _setSomething)
+    sun = property (_getSun, _setSomething)
+    MLG = property (_getMLG, _setSomething)

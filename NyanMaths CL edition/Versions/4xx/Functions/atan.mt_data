@@ -1,0 +1,7 @@
+def atan (x):
+    "Returns the arctangent of x in radians by default"
+
+    if _unit_ == 'rad':
+        return (log (1 + 1j * x) - log (1 - 1j * x)) / 2j
+
+    return (log (1 + 1j * x) - log (1 - 1j * x)) / 2j * 180 / pi

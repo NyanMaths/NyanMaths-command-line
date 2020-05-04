@@ -1,0 +1,10 @@
+def d (a, b):
+    "Compute the distance between two scalars or points"
+
+    if type (a) is Coords and type (b) is Coords:
+        return sqrt ((b.x - a.x)**2 + (b.y - a.y)**2)
+
+    if a < b:
+        return b - a
+
+    return a - b

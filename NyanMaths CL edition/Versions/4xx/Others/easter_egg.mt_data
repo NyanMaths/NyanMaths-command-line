@@ -1,0 +1,28 @@
+def easter_egg (password):
+    "Type this command to know the truth about life, universe and everything..."
+
+    if password == open ('datHelp', 'r').read ():
+        if exists ('_datHelp_'):
+            print ("\n\n")
+            system ('color 0a')
+
+            message = open ('_datHelp_', 'r').read ().split ('\n')
+
+            for line in message:
+                for char in line:
+                    print (char, end = '', flush = True)
+                    sleep (randint (3, 30) / 100)
+
+
+                sleep (1)
+                print ("\n")
+
+            sleep (2)
+
+            BSOD (True)
+
+        else:
+            print ("\n Ooooooooooooooops...\n I miss one of my data files, sorry !\n\n")
+
+    else:
+        print ("\n Get out of my way, nasty character !\n\n")

@@ -1,0 +1,4 @@
+def cuberoot (x):
+    "Returns the cube root of x"
+
+    return x**(1 / 3)
