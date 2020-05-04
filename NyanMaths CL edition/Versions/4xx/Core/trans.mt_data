@@ -1,0 +1,24 @@
+def trans (x):
+    if type (x) is complex:
+        if not x.real and not x.imag:
+            return 0
+
+        elif not x.real:
+            return trans (x.imag) * 1j
+
+        elif not x.imag:
+            return trans (x.real)
+
+        else:
+            return complex (trans (x.real, rounding), trans (x.imag, rounding))
+
+    else:
+        if not abs (x) - abs (int (x)):
+            return int (x)
+    
+        x = round (x, _precision_)
+    
+        if not abs (x) - abs (int (x)):
+            return int (x)
+    
+        return x

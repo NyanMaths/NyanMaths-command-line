@@ -1,0 +1,35 @@
+How to create an ellipse :
+>>> name = Ellipse (a, b)
+
+Properties :    (~ : editable)
+   a ~
+   b ~
+   radius ~  (Only available if a == b)
+   perimeter
+   surface
+
+Operators :
+   Multiplication (operator *) : returns a scaled up ellipse
+   Division (operator /) : returns a scaled down ellipse
+
+   Multiplication (operator *=) : scale up the ellipse
+   Division (operator /=) : scale down the ellipse
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_ellipse = Ellipse (2, 4)     Creates an ellipse named my_ellipse (a = 2, b = 4)
+
+>>> my_ellipse.surface * 4     Returns my_ellipse's surface four times
+100.531
+
+>>> my_ellipse.b = 5     Change b of my_ellipse
+
+>>> another_ellipse = Ellipse (3, 3)     Create another_ellipse with a radius of 3 (a = b)
+
+>>> my_ellipse != another_ellipse     Aren't my_ellipse and another_ellipse equal ?
+True

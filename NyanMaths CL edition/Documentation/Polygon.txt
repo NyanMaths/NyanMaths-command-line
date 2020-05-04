@@ -1,0 +1,41 @@
+How to create a regular polygon :
+>>> name = Polygon (number of sides, side length)
+
+Properties :    (~ : editable)
+   nSides ~  (number of sides)
+   side ~
+   apothem ~
+   perimeter ~
+   surface ~
+   circumcircle  (It's a disk)
+
+Operators :
+   Multiplication (operator *) : returns a scaled up polygon
+   Division (operator /) : returns a scaled down polygon
+
+   Multiplication (operator *=) : scale up the polygon
+   Division (operator /=) : scale down the polygon
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+You can enter your object's name to display its properties
+
+Example :
+
+>>> my_polygon = Polygon (7, 5)     Creates an heptagon (side = 5)
+
+>>> my_polygon.surface     Returns my_polygon's surface
+90.848
+
+>>> my_disk = my_polygon.circumcircle     my_disk is the circumscribed circle of my_polygon
+>>> my_disk.radius
+5.762     Returns my_disk's radius
+
+>>> my_polygon *= 2     Multiply my_polygon's side by two
+
+>>> another_polygon = Polygon (3, 4)     Create an equilateral triangle
+
+>>> another_polygon == my_polygon     Are my_polygon and another_polygon equal ?
+False

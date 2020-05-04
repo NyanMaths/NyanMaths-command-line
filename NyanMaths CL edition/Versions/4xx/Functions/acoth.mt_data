@@ -1,0 +1,7 @@
+def acoth (x):
+    "Returns the hyperbolic arccotengent of x in radians by default"
+
+    if _unit_ == 'rad':
+        return 0.5 * log ((x + 1) / (x - 1))
+
+    return log ((x + 1) / (x - 1)) * 90 / pi

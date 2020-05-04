@@ -1,0 +1,36 @@
+How to create a ball :
+>>> name = Ball (radius)
+
+Properties :    (~ : editable)
+   radius ~
+   diameter ~
+   volume ~
+   surface ~
+
+Operators :
+   Multiplication (operator *) : returns a scaled up ball
+   Division (operator /) : returns a scaled down ball
+
+   Multiplication (operator *=) : scale up the ball
+   Division (operator /=) : scale down the ball
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_ball = Ball (7)     Creates a ball named my_ball with a radius of 7
+
+>>> my_ball.radius     Returns my_ball's radius
+7
+
+>>> my_ball.diameter = 10     Change the diameter of my_ball (radius = 5)
+
+>>> another_ball = my_ball * 3     Create another_ball with a radius of 15
+
+>>> another_ball /= 3     another_ball's radius become 5
+
+>>> my_ball == another_ball     Are my_ball and another_ball equal ?
+True

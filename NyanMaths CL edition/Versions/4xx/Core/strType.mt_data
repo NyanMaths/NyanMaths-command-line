@@ -1,0 +1,11 @@
+def _strType (x):
+    if type (x) is int or type (x) is float or type (x) is complex:
+        return 'number'
+
+    elif type (x) is str:
+        return 'string'
+
+    if x.__doc__ is not None:
+        return 'function'
+
+    return x.__type__

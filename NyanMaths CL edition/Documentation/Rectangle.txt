@@ -1,0 +1,42 @@
+How to create a rectangle :
+>>> name = Rectangle (length, width)
+
+Properties :    (~ : editable)
+   length ~
+   width ~
+   side ~  (Only available if length and width are equal)
+   diagonale
+   perimeter
+   surface
+   circumcircle  (type Disk)
+   inscribedCircle ~  (type Disk, only available if length and width are equal)
+
+Operators :
+   Multiplication (operator *) : returns a scaled up rectangle
+   Division (operator /) : returns a scaled down rectangle
+
+   Multiplication (operator *=) : scale up the rectangle
+   Division (operator /=) : scale down the rectangle
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_rectangle = Rectangle (7, 5)     Creates my_rectangle (length = 7, width = 5)
+
+>>> my_rectangle.diagonale     Returns my_rectangle's diagonale
+8.602
+
+>>> my_disk = my_rectangle.circumcircle     my_disk is the circumscibed circle of my_rectangle
+>>> my_disk.diameter
+5
+
+>>> my_rectangle *= 2     Multiply my_rectangle's measures by two
+
+>>> another_rectangle = Rectangle (3, 3)     Create another_rectangle with a side of 3 (length = width)
+
+>>> my_rectangle == another_rectangle     Are my_rectangle and another_rectangle equal ?
+False

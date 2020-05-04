@@ -1,0 +1,7 @@
+def acosh (x):
+    "Returns the hyperbolic arccosine of x in radians by default"
+
+    if _unit_ == 'rad':
+        return log (x + (x * x - 1)**0.5)
+
+    return log (x + (x * x - 1)**0.5) * 180 / pi

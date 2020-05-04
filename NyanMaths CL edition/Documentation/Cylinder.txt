@@ -1,0 +1,34 @@
+How to create a cylinder :
+>>> name = Cylinder (radius, height)
+
+Properties :    (~ : editable)
+   radius ~
+   diameter ~
+   baseSurface ~
+   height ~
+   volume
+   surface
+
+Operators :
+   Multiplication (operator *) : returns a scaled up cylinder
+   Division (operator /) : returns a scaled down cylinder
+
+   Multiplication (operator *=) : scale up the cylinder
+   Division (operator /=) : scale down the cylinder
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_cylinder = Cylinder (2, 10)     Creates my_cylinder (radius = 2, height = 10)
+
+>>> my_cylinder.volume     Returns my_cylinder's volume
+125.664
+
+>>> my_cylinder.baseSurface = pi     my_cylinder's radius become 3.141592652...
+
+>>> my_cylinder == Cylinder (1, 3.5)     Aren't my_cylinder and Cone (7, 3) equal ?
+False

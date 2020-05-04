@@ -1,0 +1,7 @@
+def asin (x):
+    "Returns the arcsine of x in radians by default"
+
+    if _unit_ == 'rad':
+        return -(1j * log (1j * x + sqrt (1 - x * x)))
+
+    return -1j * log (1j * x + (1 - x * x)**0.5) * 180 / pi

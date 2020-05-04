@@ -1,0 +1,2 @@
+def isReal (x):
+    return type (x) is int or type (x) is float

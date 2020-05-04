@@ -1,0 +1,4 @@
+def acsc (x):
+    "Returns the arccosecant of x in radians by default"
+
+    return asin (1 / x)

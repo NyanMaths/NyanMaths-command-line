@@ -1,0 +1,4 @@
+def acot (x):
+    "Returns the arccotengent of x in radians by default"
+
+    return atan (1 / x)

@@ -1,0 +1,104 @@
+
+ Help about NyanMaths CL 2.6.2 :
+ Functions :
+
+   square(x):
+     Returns the square of x
+
+   cube(x):
+     Returns the cube of x
+
+   sqrt(x):
+     Returns the square root of x ; it works with negative numbers too !
+
+   cuberoot(x):
+     Return the  cubic root of x
+
+   root(x, y):
+     Return the root x of y (root (2, 25) is the square root of 25)
+
+   power(x, y):
+     Returns x to the power y
+
+   exp(x):
+     Returns e to the power x
+
+   log(x, y):
+     Returns the logarithm y of x (y = e by default)
+     >>> log(e)
+     1
+     >>> log(16, 2)
+     4
+
+   abs(x):
+     Returns the absolute value of x
+
+   sin(x):
+     Returns the sine of x
+     You can use asin(x) too
+
+   cos(x):
+     Returns the cosine of x
+     You can use acos(x) too
+
+   tan(x):
+     Returns the tangent of x
+     You can use atan(x) too
+
+   degrees(x):
+     Convert x in degrees
+
+   radians(x):
+     Convert x in radians
+
+   fact(x):
+     Returns the factorial of x
+
+   divisible(n, x):
+     Says if x divides a
+
+   gcd(x, y):
+     Returns the greatest divider of x and y
+
+   prime(x):
+     Returns 1 if x is prime, 0 else
+
+   pythagore(a, b, c):
+     This function applies the Pythagorean theorem.
+     'c' is the hypotenuse, 'a' and 'b' are the other sides.
+     If you want to get the length of 'b' for example, pass it 0 insthead of b, look at this :
+     >>> pythagore(3, 0, 5)
+     4.0                                    It returns the 'b' side !
+
+     If you want to verify if a triangle is right, pass it all sides :
+     >>> pythagore (6, 8, 10)
+     This triangle is right !
+
+   syracuse(x):
+     Display the Collatz continuation of x
+
+   run(name):
+     Run the specified application. To get more informations, check the documentation
+
+   operations()
+     Display the operations which you can do
+
+   exit():
+     If you want to quit (logical...)
+
+   setPrecision(x):
+      Change the precision in decimals (from 0 to 12 decimals).
+      You have to restart the application to apply changes.
+
+   setUnit(x):
+      Change the current unit (drg or rad).
+      You have to restart the application to apply changes.
+
+ Data :
+     pi = 3.141592653589793238462
+     e = 2.71828182845904523536
+     phi = 1.618033988749894848204
+     G = 6.67408 * 10^-11
+
+     g[earth = 9.80665, moon = 1.622]
+     Use it as follows : g[moon]

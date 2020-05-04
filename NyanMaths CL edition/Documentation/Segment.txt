@@ -1,0 +1,25 @@
+How to create a segment :
+>>> name = Segment (x1, y1, x2, y2)
+or :
+>>> name = Segment (Coords, Coords)   (like Segment (Coords (-3, 4), Coords (8, -1)))
+
+Properties :    (~ : editable)
+   a ~   (Start point)
+   b ~   (Finish point)
+   length
+
+
+Example :
+
+>>> my_segment = Segment (0, 0, 3, 5)
+
+>>> my_segment.length     Returns my_segment's length
+5.831
+
+>>> my_segment.a = -1, -1
+
+>>> my_segment
+
+ Start point : (-1 ; -1)
+ Finish point : (3 ; 5)
+ Length : 7.211102551

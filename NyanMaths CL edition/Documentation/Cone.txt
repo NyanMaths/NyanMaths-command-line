@@ -1,0 +1,36 @@
+How to create a cone :
+>>> name = Cone (radius, height)
+
+Properties :    (~ : editable)
+   radius ~
+   diameter ~
+   baseSurface ~
+   height ~
+   volume
+   lateralSurface
+
+Operators :
+   Multiplication (operator *) : returns a scaled up cone
+   Division (operator /) : returns a scaled down cone
+
+   Multiplication (operator *=) : scale up the cone
+   Division (operator /=) : scale down the cone
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_cone = Cone (3, 7)     Creates my_cone (radius = 3, height = 7)
+
+>>> my_cone.baseSurface     Returns my_cone's base surface
+3
+
+>>> my_cone /= 2     Divide my_cone's measures by 2 (radius = 1.5, height = 3.5)
+
+>>> my_cone.diameter = 2     my_cone's radius become 1
+
+>>> my_cone == Cone (1, 3.5)     Are my_cone and Cone (1, 3.5) equal ?
+True

@@ -1,0 +1,36 @@
+How to create a cuboid :
+>>> name = Cuboid (length, width, height)
+
+Properties :    (~ : editable)
+   length ~
+   width ~
+   height ~
+   diagonale
+   volume
+   surface
+
+Operators :
+   Multiplication (operator *) : returns a scaled up cuboid
+   Division (operator /) : returns a scaled down cuboid
+
+   Multiplication (operator *=) : scale up the cuboid
+   Division (operator /=) : scale down the cuboid
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_cuboid = Cuboid (6, 5, 3)     Creates my_cuboid (length = 6, width = 5, height = 3)
+
+>>> my_cuboid.width     Returns my_cuboid's width
+5
+
+>>> my_cuboid.length = 7     my_cuboid's length become 7
+
+>>> another_cuboid = Cuboid (2, 2, 2)     Create another_cuboid (length = width = height = 2)
+
+>>> my_cuboid != another_cuboid     Aren't my_cuboid and another_cuboid equal ?
+True

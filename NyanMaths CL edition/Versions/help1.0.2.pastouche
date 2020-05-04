@@ -1,0 +1,26 @@
+ Help about NyanMaths CL 1.0.2 :
+ Functions :
+
+   square(x):
+     Returns the square of x
+
+   cube(x):
+     Returns the cube of x
+
+   sqrt(x):
+     Returns the square root of x
+
+   power(x, y):
+     Returns x to the power y
+
+   abs(x):
+     Returns the absolute value of x
+
+   fact(x):
+     Returns the factorial of x
+
+   prime(x):
+     Returns 1 if x is prime, 0 else
+
+   exit():
+     If you want to quit (logical...)

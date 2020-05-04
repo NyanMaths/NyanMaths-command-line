@@ -1,0 +1,2 @@
+def _isIntegral (x, MIN = 0):
+    return not (x - int (x)) and x > MIN

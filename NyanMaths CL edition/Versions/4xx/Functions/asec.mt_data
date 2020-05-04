@@ -1,0 +1,4 @@
+def asec (x):
+    "Returns the arcsecant of x in radians by default"
+
+    return acos (1 / x)

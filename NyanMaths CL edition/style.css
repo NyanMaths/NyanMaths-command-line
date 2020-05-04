@@ -1,0 +1,43 @@
+body
+{
+    background-image : url("background.png");
+}
+
+p
+{
+	font-family : "Comic Sans MS";
+	font-size : 0.96em;
+	color : black;
+}
+
+h1
+{
+	font-family : "Arial Black";
+	color : red;
+	font-weight : bold;
+	text-align : center;
+	font-size : 2.0em;
+	text-decoration : underline;
+}
+
+h2
+{
+	font-family : "Arial Black";
+	color : green;
+	font-size : 1.6em;
+}
+
+li
+{
+	font-family : "Comic Sans MS";
+}
+
+.floating_left
+{
+	float : left;
+}
+
+.dessous
+{
+	clear : both;
+}

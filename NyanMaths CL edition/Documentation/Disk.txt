@@ -1,0 +1,34 @@
+How to create a disk :
+>>> name = Disk (radius)
+
+Properties :    (~ : editable)
+   radius ~
+   diameter ~
+   perimeter ~
+   surface ~
+
+Operators :
+   Multiplication (operator *) : returns a scaled up disk
+   Division (operator /) : returns a scaled down disk
+
+   Multiplication (operator *=) : scale up the disk
+   Division (operator /=) : scale down the disk
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_disk = Disk (3)     Creates my_disk (radius = 3)
+
+>>> my_disk.perimeter     Returns my_disk's perimeter
+3
+
+>>> my_disk /= 3     Divide my_square's measures by 3 (radius = 1)
+
+>>> another_disk = Disk (1)     Create another_disk (radius = 1)
+
+>>> my_disk == another_disk     Are my_disk and another_disk equal ?
+True

@@ -1,0 +1,7 @@
+def asech (x):
+    "Returns the hyperbolic arcsecant of x in radians by default"
+
+    if _unit_ == 'rad':
+        return log ((1 + (1 - x * x)**0.5) / x)
+
+    return log ((1 + (1 - x * x)**0.5) / x) * 180 / pi

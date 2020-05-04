@@ -1,0 +1,36 @@
+Some functions of NyanMaths return points,
+here is the way to use them...
+
+How to create a point :
+>>> name = Coords (x, y)
+
+Properties :    (~ : editable)
+   x ~
+   y ~
+
+Operators :
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_point = Coords (4, -2)
+
+>>> my_point.y
+-2
+
+>>> p =Polynomial (1, -1, -1)   Creates a second degree polynomial
+
+>>> my_point = p.summit   my_point is the summit of p
+
+>>> my_point
+
+ (0.5 ; -1.25)   It's a Coords object !
+
+>>> my_point.x = 1
+
+>>> my_point
+
+ (1 ; -1.25)

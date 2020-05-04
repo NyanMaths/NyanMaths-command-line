@@ -1,0 +1,7 @@
+def acsch (x):
+    "Returns the hyperbolic arccosecant of x in radians by default"
+
+    if _unit_ == 'rad':
+        return log (1 / x + (x**(-2) + 1)**0.5)
+
+    return log (1 / x + (x**(-2) + 1)**0.5) * 180 / pi

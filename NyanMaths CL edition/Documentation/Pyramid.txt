@@ -1,0 +1,33 @@
+How to create a pyramid :
+>>> name = Pyramid (base surface, height)
+
+Properties :    (~ : editable)
+   baseSurface ~
+   height ~
+   volume
+
+Operators :
+   Multiplication (operator *) : returns a scaled up pyramid
+   Division (operator /) : returns a scaled down pyramid
+
+   Multiplication (operator *=) : scale up the pyramid
+   Division (operator /=) : scale down the pyramid
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_pyramid = Pyramid (15, 7)     Creates my_pyramid (base surface = 15, height = 7)
+
+>>> my_pyramid.volume     Returns my_pyramid's volume
+35
+
+>>> my_pyramid *= 2     Multiply my_pyramid's measures by 3 (base surface = 60, height = 14)
+
+>>> another_pyramid = Pyramid (20, 3)     Create another_pyramid (base surface = 20, height = 3)
+
+>>> another_pyramid == my_pyramid     Are another_pyramid and my_pyramid equal ?
+False

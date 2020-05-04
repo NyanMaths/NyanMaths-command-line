@@ -1,0 +1,221 @@
+
+ Help about NyanMaths CL 4.1.1 :
+
+
+------------------------------ Functions ------------------------------
+
+
+   square(x):
+     Returns the square of x
+
+   cube(x):
+     Returns the cube of x
+
+   sqrt(x):
+     Returns the square root of x ; it works with negative numbers too !
+
+   cuberoot(x):
+     Returns the  cubic root of x
+
+   root(x, y):
+     Returns the x th root of y (root (2, 25) is the square root of 25)
+
+   power/pow(x, y):
+     Returns x to the power y
+
+   exp(x):
+     Returns e to the power x
+
+   log(x, y):
+     Returns the logarithm y of x (y = e by default)
+     >>> log(e)
+     1
+     >>> log(16, 2)
+     4
+
+   ln(x):
+      Returns the natural logarithm of x (same as log(e, x))
+
+   abs(x):
+     Returns the absolute value of x
+
+   d(x, y):
+     Computes the distance between two scalars or points
+
+   middle(x, y):
+     Calculates the average of two scalars or the middle of a segment (x and y are two points in this case)
+
+   cis(x):
+      Returns e^(ix)
+
+   fact(x):
+     Returns the factorial of x
+
+   divisible(n, x):
+     Says if x divides n
+
+   gcd(x, y):
+     Returns the greatest divider of x and y
+
+   prime(x):
+     Returns 1 if x is prime, 0 else
+
+   pythagore(a, b, c):
+     This function applies the Pythagorean theorem.
+     'c' is the hypotenuse, 'a' and 'b' are the other sides.
+     If you want to get the length of 'b' for example, pass it 0 insthead of b, look at this :
+     >>> pythagore(3, 0, 5)
+     4                                    It returns the 'b' side !
+
+     If you want to verify if a triangle is right, pass it all sides :
+     >>> pythagore (6, 8, 10)
+     This triangle is right-angled !
+
+   syracuse(x):
+     Displays the Collatz continuation of x
+
+   sRadius(x):
+      Returns the Schwarzschild radius (in meters) of the object weighing x k
+
+   average(...):
+      Computes the average of the arguments
+      Example : average (10, 5) = 7.5
+
+   frequence(duration, t):
+      Returns in Hertz the frequency of the periodic signal (seconds) repeated t times (1 by default)
+
+
+------------------------------ Others ------------------------------
+
+
+   operations()
+     Displays the operations which you can do
+
+  tools():
+     Displays all tools available in this version
+
+   setPrecision(x):
+      Changes the precision in decimals (from 0 to 12 decimals).
+      You have to restart the application to apply changes.
+
+   setUnit(x):
+      Changes the current unit (drg or rad).
+      You have to restart the application to apply changes.
+
+   reset()
+      Restores default configuration of the application
+
+   func():
+      This virtual assistant will help you create
+      your own mathematics functions !
+      Launch it for more details...
+
+   const():
+      This virtual assistant will help you create and edit
+      your own mathematical constants !
+      Launch it for more details...
+
+   doc(variable or type):
+      Displays documentation of the object or the function :
+      how to create it, what can you do with it...
+      Example :
+      >>> doc (Ball)     Will display the documentation of type Ball
+      >>> doc (sin)       Displays "Returns the sine of x (by default, x is in radians)"
+
+
+   Enter "exit" or "quit" to...
+   Please don't make me say it.
+
+
+------------------------------ Trigonometric functions ------------------------------
+
+
+   degrees(x):
+     Converts x to degrees
+
+   radians(x):
+     Converts x to radians
+
+   These are all of the trigonometric functions in NyanMaths :
+   Circular :
+      sin(x)    asin(x)
+      cos(x)    acos(x)
+      tan(x)    atan(x)
+      cot(x)    acot(x)
+      sec(x)    asec(x)
+      csc(x)    acsc(x)
+
+   Hyperbolic :
+      sinh(x)    asinh(x)
+      cosh(x)    acosh(x)
+      tanh(x)    atanh(x)
+      coth(x)    acoth(x)
+      sech(x)    asech(x)
+      csch(x)    acsch(x)
+
+   Enter doc(func_name) for more information
+
+
+   Protip : type "last" to execute your last command !
+   Protip 2 : You can enter 2.5E+4 insthead of 2.5 * 10^4
+
+&
+
+------------------------------ Constants ------------------------------
+
+
+ Constants :
+     pi = 3.141 592 653 589 793 238 462
+     tau = 6.28 318 530 717 958 647 693
+     e = 2.71 828 182 845 904 523 536
+     phi = 1.618 033 988 749 894 848 204
+
+     G = 6.6 743 015 E-11  m^3 * kg^(-1) * s^(-2)
+     proton = 1.602 176 634 E-19  Coulombs
+     h = 6.62 607 015 E-34 Joules * second
+     hBar = 1.054 571 818 E-34 Joules * second
+     mol = 6.02 214 076 E+23 mol^(-1)   (Avogadro constant)
+
+
+     Speed constants (in m / s):
+          light = 299 792 458
+          sound = 347
+
+          Use it as follows : s.light ; s.sound ...
+
+
+     AccelerationConstants (in m / s²):
+          earth = 9.80 665
+          moon = 1.622
+          sun = 273.95
+
+          Use it as follows : a.moon ; a.sun ...
+
+
+     Weight constants:  (in kg)
+          electron = 9.10 938 356 E-31
+          proton = 1.672 649 E-27
+          neutron = 1.674 927 471 E-27
+          earth = 5.97 237 E+24
+          moon = 7.342 E+22
+          sun = 1.9 885 E+30
+          sgrA = 8.256 252 E+36    Sagittarius A
+
+          Use it as follows : w.proton ; w.sun ...
+
+
+     Measurement constants:  (in meters)
+          inch = 0.0 254
+          foot = 0.3 048
+          yard = 0.9 144
+          nauticalMile = 1 852
+          league = 4 828.032
+          ua = 149 597 870 000
+          ly = 9 460 730 472 580 800
+          parsec = 30 856 775 670 528 308
+
+          Use it as follows : m.foot ; m.ly ...
+
+   Notice that you can't edit these constants because they are... constants.
+   You can also create your own constants with command const()
+

@@ -1,0 +1,7 @@
+def acos (x):
+    "Returns the arccosine of x in radians by default"
+
+    if _unit_ == 'rad':
+        return pi / 2 - asin (x)
+
+    return -1j * log (x + 1j * (1 - x * x)**0.5) * 180 / pi

@@ -1,0 +1,33 @@
+How to create a Prism :
+>>> name = Prism (base surface, height)
+
+Properties :    (~ : editable)
+   baseSurface ~
+   height ~
+   volume
+
+Operators :
+   Multiplication (operator *) : returns a scaled up prism
+   Division (operator /) : returns a scaled down prism
+
+   Multiplication (operator *=) : scale up the prism
+   Division (operator /=) : scale down the prism
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_prism = Prism (10, 3)     Creates my_prism (base surface = 10, height = 3)
+
+>>> my_prism.volume     Returns my_prism's volume
+30
+
+>>> my_prism *= 2     Multiply my_prism's measures by 3 (base surface = 40, height = 6)
+
+>>> another_prism = Prism (11, 6)     Create another_prism (base surface = 11, height = 6)
+
+>>> another_prism != my_prism     Aren't another_prism and my_prism equal ?
+True

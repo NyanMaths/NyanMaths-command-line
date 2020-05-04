@@ -1,0 +1,2 @@
+def _isRealLimit (x, MIN = 0):
+    return (type (x) is int or type (x) is float or (type (x) is complex and x.imag == 0)) and x > MIN

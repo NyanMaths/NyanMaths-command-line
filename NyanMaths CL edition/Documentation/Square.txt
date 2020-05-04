@@ -1,0 +1,41 @@
+How to create a square :
+>>> name = Square (side)
+
+Properties :    (~ : editable)
+   side ~
+   apothem ~
+   diagonale ~
+   perimeter ~
+   surface ~
+   circumcircle ~  (a Disk)
+   inscribedCircle ~  (a Disk too)
+
+Operators :
+   Multiplication (operator *) : returns a scaled up square
+   Division (operator /) : returns a scaled down square
+
+   Multiplication (operator *=) : scale up the square
+   Division (operator /=) : scale down the square
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_square = Square (6)     Creates my_square (side = 6)
+
+>>> my_square.apothem     Returns my_square's apothem
+3
+
+>>> my_circle = my_square.circumcircle
+>>> my_circle.radius
+4.243     Returns my_circle's radius
+
+>>> my_square /= 3     Divide my_square's measures by 3 (side = 2)
+
+>>> another_square = Square (2)     Create another_square (side = 3)
+
+>>> my_square != another_square     Aren't my_square and another_square equal ?
+True

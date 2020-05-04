@@ -1,0 +1,34 @@
+How to create a cube :
+>>> name = Cube (edge)
+
+Properties :    (~ : editable)
+   edge ~
+   volume ~
+   diagonale ~
+   surface ~
+
+Operators :
+   Multiplication (operator *) : returns a scaled up cube
+   Division (operator /) : returns a scaled down cube
+
+   Multiplication (operator *=) : scale up the cube
+   Division (operator /=) : scale down the cube
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_cube = Cube (6)     Creates a cube named my_cube with an edge of 6
+
+>>> my_cube.volume     Returns my_cube's volume
+216
+
+>>> my_cube.edge = 3     Change the edge of my_cube
+
+>>> my_cube /= 3     my_cube's edge become 1
+
+>>> my_cube == Cube (3)     Are my_cube and Cube (3) equal ?
+False                                       Nope

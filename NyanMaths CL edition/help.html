@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>Documentation of NyanMaths command line edition</title>
+		
+		<link rel = "icon" href = "Icon.ico" />
+		<link rel = "stylesheet" href = "style.css" />
+    </head>
+
+    <body>
+		<p><img src = "Icon.png" alt = "Application icon" class = "floating_left" /><h1>Help about NyanMaths</h1></p>
+		<p class = "dessous">
+			<h2>Summary :</h2>
+			<ul>
+				<li><a href = "#basic" title = "Go to the section 'Basic use'">Basic use</a></li>
+				<li><a href = "#advanced" title = "Go to the section 'Advanced use'">Advanced use</a></li>
+			</ul>
+			
+			<h2 id = "basic"> &nbsp &nbsp (1) Basic use</h2>
+			<p>
+				When you run the main application from the GUI launcher, you can see this :
+
+				<br /><br /><br /> Something like help...
+				<br /><br />> What can I do ? _
+
+				<br /><br />It means this application works !
+				<br />It may not displays this, please reinstall this program in this case because it must be corrupted.
+				<br />Disable your anti-malware during the second installation.
+
+				<br /><br />This application works with command lines : if you want to do something, you must input a command
+				<br />in the console.
+				<br />Example :
+
+				<br /><br />> square(6)
+				<br /> 36
+
+				<br /><br />It returns the square of 6 !
+
+				<br /><br />If you want to read the help, tick the option "If you need any help" in the launcher and it will display
+				<br />the help about the functions :
+
+				<br /><br />In version 1.0.1)
+
+				<br /><br />| Help about NyanMaths CL 1.0.1:
+				<br />|  
+				<br />|&nbsp Description :
+				<br />|&nbsp &nbsp Here, there is the documentation of this application !
+				<br />|  
+				<br />|&nbsp Functions :
+				<br />|&nbsp &nbsp square(x):
+				<br />|&nbsp &nbsp &nbsp &nbsp Returns the square of x
+				<br />|  
+				<br />|&nbsp &nbsp cube(x):
+				<br />|&nbsp &nbsp &nbsp &nbsp Returns the cube of x
+				<br />|  
+				<br />|&nbsp &nbsp sqrt(x):
+				<br />|&nbsp &nbsp &nbsp &nbsp Returns the square root of x
+				<br />|  
+				<br />|&nbsp &nbsp power(x, y):
+				<br />|&nbsp &nbsp &nbsp &nbsp Returns x to the power y
+				<br />|  
+				<br />|&nbsp &nbsp fact(x):
+				<br />|&nbsp &nbsp &nbsp &nbsp Returns the factorial of x
+				<br />|  
+				<br />|&nbsp &nbsp prime(x):
+				<br />|&nbsp &nbsp &nbsp &nbsp Returns 1 if x is prime, 0 else
+				<br />|  
+				<br />|&nbsp &nbsp exit():
+				<br />|&nbsp &nbsp &nbsp &nbsp If you want to quit (logical...)
+				<br />|  
+
+				<br /><br />You have halp about all functions : their parameters and what they do !
+				<br />It is magic !
+				<br />But, it is not finished...
+
+				<br /><br />There is mathematical tools in this app : you can launch them as other functions,
+				<br />by typing their name :
+
+				<br /><br />>>> tool_name ()
+				<br />...
+
+				<br /><br />In the last version, there is 7 tools :
+
+				<br /><br />- primes
+				<br />- dividers
+				<br />- UIR (Relationship between intensity, elecric tension and resistance)
+				<br />- PUI (Relationship between intensity, elecric tension and power)
+				<br />- VDT (Relationship between speed, distance and time)
+				<br />- MVD (Relationship between density, weight and volume)
+				<br />- temperature (Convert °F to °C, for example)
+
+				<br /><br />If you need some help about an application, run it !
+
+				<br /><br />>>> primes ()
+
+				<br /><br />&nbsp This application calculates all prime numbers
+				<br />&nbsp from an odd positive no null number to... An other greater odd positive number !
+				<br />&nbsp Beware : the last numbers will be deleted !
+
+				<br />&nbsp Calculate the prime numbers from...
+
+				<br /><br />All tools have a short description, cool !
+
+
+				<br /><br /><br />If you want, you can do some operations :
+				<br />In the command line interface, input "operations()" to get all
+				<br />operations you can do.
+				<br />For example :
+
+				<br /><br />>>> 5 + 5
+				<br />10
+				<br />>>> 9 * 2
+				<br />18
+				<br />>>> 6**2 &nbsp &nbsp &nbsp Equals to 6² or power(6, 2)
+				<br />36
+
+				<br /><br />You can use the return-values of the functions :
+
+				<br /><br />>>> fact(5) + 3
+				<br />123
+				<br />>>> 9.2 - abs(9)
+				<br />0.2
+				
+				<br /><br />You can also use complex numbers like this :
+				<br />If you want to use "i" notation, write a * i insthead of aj)
+				<br /><br />>>> (3 + 2j) / 2
+				<br />(1.5 + j)
+				
+				<br /><br />You can also use logical operators :
+				<br /> &nbsp &nbsp Greater than : >
+				<br /> &nbsp &nbsp Lesser than : <
+				<br /> &nbsp &nbsp Equals : == (Yes, two !)
+				<br /> &nbsp &nbsp Not equals : !=
+				
+				<br /><br />>>> 5 + 5 == 10
+				<br />True
+				
+				<br /><br />>>> 6 * 7 < 20
+				<br />False
+				
+				<br /><br /><br />There is a lot of constant values since 3.1 version :
+			</p>
+			<ul>
+				<li>Gravitationnal constants (m / s²) : prefixed by g.</li>
+				<li>Weight constants (kg) : prefixed by w.</li>
+				<li>Measures constants (m) : prefixed by m.</li>
+			</ul>
+			<p>
+				<br />Note : You can have the complete list if you check "Display constants values" in the launcher.
+				
+				<br /><br />If you want to use one of this constants :
+				
+				<br /><br />>>> 68 * g.earth
+				<br />666.8521999...
+				
+				<br /><br />>>> m.ly * 13.7 * 10**9
+				<br />1.2961200747435696e+26 &nbsp &nbsp &nbsp The radius of the visible universe in meters !
+				
+				<br /><br />
+			</p>
+			<h2 id = "advanced">(2) Advanced use</h2>
+			<p>
+				<br /><br />There's a functionnality to create objects like cubes, cones or vectors.
+				<br />If you want to use it, tick the check box "Load all modules when you start" in the launcher.
+
+				<br /><br />It is sample : create an object like this :
+
+				<br /><br />>>> my_object = Square (5) &nbsp &nbsp &nbsp A square with a length of 5 arbitrary unit has been created !
+
+				<br /><br />You can see you have to give the side of the square : you will give different data for different objects.
+
+				<br /><br />Here is the list of the objects which you can create :
+			</p>
+			<ul>
+				<li>Square(side)</li>
+				<br /><li>Rectangle(length, width)</li>
+				<br /><li>Cube(edge)</li>
+				<br /><li>Cuboid(length, width, height)</li>
+				<br /><li>Ball(radius)</li>
+				<br /><li>Disk(radius)</li>
+				<br /><li>Cone(base radius, height)</li>
+				<br /><li>Cylinder(radius, height)</li>
+				<br /><li>Prism(base surface, height)</li>
+				<br /><li>Pyramid(base surface, height)</li>
+				<br /><li>Ellipsoid(a b, c)</li>
+				<br /><li>Ellipse(a, b)</li>
+				<br /><li>Polygon(number of sides, side length)</li>
+			</ul>
+			<p>
+				<br />When you have created your beautiful square, what can you do with it ?
+
+				<br /><br />If you want to get a data from your object, do this :
+
+				<br /><br />>>> my_object.data_name
+
+				<br /><br />For example :
+
+				<br /><br />>>> my_square = Square (6)
+				<br />>>> my_square.side
+				<br />6
+
+				<br /><br />You get the side of your square !
+				<br />But, you know already it, why not ask surface ?
+
+				<br /><br />>>> my_square = Square (3.5)
+				<br />>>> my_square.surface
+				<br />12.25
+
+				<br /><br />Wonderful !
+				<br />But, what can I know about my cubes or prisms ?
+				<br />Do not panic, look at this :
+
+				<br /><br />Square :
+				<br />&nbsp &nbsp side
+				<br />&nbsp &nbsp apothem
+				<br />&nbsp &nbsp diagonale
+				<br />&nbsp &nbsp perimeter
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp circumcircle (a Disk object)
+				<br />&nbsp &nbsp inscribedCircle (a Disk object)
+
+				<br /><br />Rectangle :
+				<br />&nbsp &nbsp length
+				<br />&nbsp &nbsp width
+				<br />&nbsp &nbsp perimeter
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp diagonale
+				<br />&nbsp &nbsp circumcircle (a Disk object)
+				<br />&nbsp &nbsp inscribedCircle (a Disk object)
+				
+
+				<br /><br />Cube :
+				<br />&nbsp &nbsp edge
+				<br />&nbsp &nbsp volume
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp diagonale
+
+				<br /><br />Cuboid :
+				<br />&nbsp &nbsp length
+				<br />&nbsp &nbsp width
+				<br />&nbsp &nbsp heigth
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp volume
+				<br />&nbsp &nbsp diagonale
+
+				<br /><br />Ball :
+				<br />&nbsp &nbsp radius
+				<br />&nbsp &nbsp diameter
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp volume
+
+				<br /><br />Disk :
+				<br />&nbsp &nbsp radius
+				<br />&nbsp &nbsp diameter
+				<br />&nbsp &nbsp perimeter
+				<br />&nbsp &nbsp surface
+
+				<br /><br />Cone :
+				<br />&nbsp &nbsp radius
+				<br />&nbsp &nbsp diameter
+				<br />&nbsp &nbsp baseSurface
+				<br />&nbsp &nbsp height
+				<br />&nbsp &nbsp volume
+				<br />&nbsp &nbsp lateralSurface
+
+				<br /><br />Cylinder :
+				<br />&nbsp &nbsp radius
+				<br />&nbsp &nbsp diameter
+				<br />&nbsp &nbsp baseSurface
+				<br />&nbsp &nbsp height
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp volume
+
+				<br /><br />Prism :
+				<br />&nbsp &nbsp baseSurface
+				<br />&nbsp &nbsp height
+				<br />&nbsp &nbsp volume
+
+				<br /><br />Pyramid :
+				<br />&nbsp &nbsp baseSurface
+				<br />&nbsp &nbsp height
+				<br />&nbsp &nbsp volume
+				
+				<br /><br />Ellipsoid :
+				<br />&nbsp &nbsp a
+				<br />&nbsp &nbsp b
+				<br />&nbsp &nbsp c
+				<br />&nbsp &nbsp volume
+				
+				<br /><br />Ellipse :
+				<br />&nbsp &nbsp a
+				<br />&nbsp &nbsp b
+				<br />&nbsp &nbsp perimeter
+				<br />&nbsp &nbsp surface
+				
+				<br /><br />Polygon :
+				<br />&nbsp &nbsp nSides (Number of sides)
+				<br />&nbsp &nbsp side
+				<br />&nbsp &nbsp apothem
+				<br />&nbsp &nbsp perimeter
+				<br />&nbsp &nbsp surface
+				<br />&nbsp &nbsp circumcircle (a Disk object)
+				<br />&nbsp &nbsp inscribedCircle (a Disk object)
+				
+				
+				<br /><br /><br />You can also get the documentation of these objects as follows :
+				
+				<br /><br />> doc(Cylinder, Cube or Ellipse)
+
+				<br /><br /><br />If you want to change data of your objects, do this (or write this) :
+
+				<br /><br />>>> ball = Ball(23)
+				<br />>>> ball.radius
+				<br />23
+				<br />>>> ball.radius = 10
+				<br />>>> ball.radius
+				<br />10
+
+				<br /><br />Fantastic !
+				<br />You can change object's data like this.
+				<br />But, you can't change everything : if you try this :
+
+				<br /><br />>>> my_rect = Rectangle (2, 3)
+				<br />>>> my_rect.surface = 65
+				<br /><br />Impossible to change it !
+
+				<br /><br />My application is angry !
+				<br />Indeed, you can not do that : it is not allowed because
+				<br />we can not change the surface of a rectangle, it is not possible.
+				<img src = "Rage_kit.gif" alt = "RAGE" />
+				
+				<br /><br />If you want to display all properties of your object, just write its name :
+				<br /><br />>>> my_square = Square (5.5)
+				<br />>>>my_square
+				<br /><br />Type : Square
+				<br />Side : 5.5
+				<br />Perimeter : 22.0
+				<br />Surface : 30.25
+				<br />Apothem : 2.75
+				<br />Diagonale : 7.778174593052023
+				
+				<br /><br />Note that since v2.6, it displays a GUI instead of console.
+				
+				<br /><br />You can do operations with your objects (homothety), it is sample :
+				
+				<br /><br />>>> s = Square (2)
+				<br />>>> s * 3
+				<br /><br />Type : Square
+				<br />Side : 6
+				<br />Perimeter : 24
+				<br />Surface : 36
+				<br />Apothem : 3
+				<br />Diagonale : 8.485281374238571
+				
+				<br /><br />It transform your object by homothety !
+				<br />Be careful : the previous example doesn't modify your object.
+				<br />You can transform your object like this :
+				
+				<br /><br />>>> s *= 3 &nbsp &nbsp &nbsp Multiply the measures 3 times
+				<br />>>> s /= 3 &nbsp &nbsp &nbsp Restore the old measures
+				
+				<br /><br />Since 2.4.1, there is a new class : the Polynomial.
+				<br />You can initialize it like this :
+				
+				<br /><br />>>> p = Polynomial (1, 5, -3)
+				
+				<br /><br />It created a 2nd degree polynomial (x² + 5x - 3)!
+				<br />But you can only create a 2nd degree polynimial with it, sorry...
+				<br />You can now access to the roots or the summit of this polynomial !
+				
+				<br /><br />>>> p
+				<br />Type : Polynomial (2nd degree)
+				<br />Expression : 1x² + 5x + -3
+				<br />Discriminant : 37
+				<br />Reduced discriminant : 9.25
+				<br />Root 1 :  -5.541
+				<br />Root 2 :  0.541
+				<br />Summit :  (-2.5 ; -9.25)
+				<br />Derivee : 2x + 5
+				
+				<br /><br />There is a few functionnalities around it :
+				<br />&nbsp &nbsp - Evaluate polynomial with a value : p.evaluate (x)
+				<br />&nbsp &nbsp - Get the discriminant : p.dsc
+				<br />&nbsp &nbsp - Get the reduced discriminant : p.reducedDsc
+				<br />&nbsp &nbsp - Get a : p.a
+				<br />&nbsp &nbsp - Get b : p.b
+				<br />&nbsp &nbsp - Get c : p.c
+				<br />&nbsp &nbsp - Get the first root : p.root1
+				<br />&nbsp &nbsp - Get the second root : p.root2
+				<br />&nbsp &nbsp - Get the summit of the parabola : p.summit
+
+				<br /><br />To finish, there is a special object type : the vector.
+				<br />I do not explain to you what is a vector, Internet is you friend !
+				<br />You can create a vector as a ball or a square :
+
+				<br /><br />>>> my_vector = Vector (5, 7.5)
+				<br />>>> my_vector
+
+				<br /><br /> &nbsp (5 &nbsp &nbsp 7.5)
+				<br /> &nbsp Length : 9.014
+
+				<br /><br />The length is... the length of you vector on an orthonormal plane.
+				<br />So, you can use the vectors like this :
+
+				<br /><br />>>> v1 = Vector (5, 6)
+				<br />>>> v2 = Vector (-6, 3)
+				<br />>>> v1 + v2
+				<br /><br /> &nbsp (-1 9)
+				<br /> &nbsp Length : 9.055
+				<br /><br />>>>v1 * 5
+				<br />...
+
+				<br /><br />You can add, substract, multiply and divide vectors with vectors or numbers ; test it !
+
+				<br /><br />It is all, now, you can use the full application !
+
+				<br /><br />Bye bye !<br /><br /><br />
+			</p>
+		</p>
+    </body>
+</html>

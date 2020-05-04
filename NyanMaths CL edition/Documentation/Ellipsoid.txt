@@ -1,0 +1,33 @@
+How to create an ellispoid :
+>>> name = Square (side)
+
+Properties :    (~ : editable)
+   a ~
+   b ~
+   c ~
+   volume
+   surface  (Only available if a = b = c)
+
+Operators :
+   Multiplication (operator *) : returns a scaled up ellipsoid
+   Division (operator /) : returns a scaled down ellipsoid
+
+   Multiplication (operator *=) : scale up the ellipsoid
+   Division (operator /=) : scale down the ellipsoid
+
+   Comparisons :
+      Equals to (operator ==) : returns True if the two operands are the same
+      Not equals to (operator !=) : returns True if the two operands aren't the same
+
+
+Example :
+
+>>> my_ellipsoid = Ellipsoid (5, 4, 2)     Creates my_ellipsoid (a = 5, b = 4, c = 2)
+
+>>> my_ellipsoid.volume     Returns my_ellipsoid's volume
+167.552
+
+>>> my_ellipsoid /= 2     Divide my_ellipsoid's measures by 2 (a = 2.5, b = 2, c = 1)
+
+>>> my_ellipsoid == Ellipsoid (4, 4, 4)     Are my_ellipsoid and Ellipsoid (4, 4, 4) equal ?
+False
