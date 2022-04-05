@@ -1,5 +1,5 @@
 # NyanMaths-command-line
-NyanMaths command line edition is a mathematical software made with Python.
+NyanMaths command line edition is a mathematical software made with Python. It is currently WIP and needs a quite complete rewrite because it is so poorly programmed...
 
 To use it, you have to enter a command such as :
 
